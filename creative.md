@@ -9,6 +9,13 @@ thumbnail: assets/images/nautilus-2.jpg
 
 ## Kinetic Sculptures
 
+{% include figure.html
+  class="left"
+  width="60%"
+  caption="AI-generated kinetic sculpture"
+  image-path="/assets/images/ai-created-kinetic-sculpture.png"
+%}
+
 My work begins with wind and ends with rhythm. I am fascinated by the unnoticed movements that govern our lives—the subtle swaying of grass, the imperceptible shift of shadows across a wall, the tidal pulse of breath that carries us from dawn to sleep. My sculptures are collaborations with these invisible forces. By giving steel, wood, and glass a chance to dance with air currents, I am inviting the environment to finish the artwork for me. What I make is not still, and therefore, never fully finished.
 
 I draw inspiration from the mechanics of insect wings, the pendulum swings of old clocks, and the ritual motions of daily human life—stirring tea, hanging laundry, pacing while thinking. I use simple materials, but they are carefully tuned so that the smallest nudge—a breeze, a passerby’s presence, a vibration in the floor—sets them in motion. I want my pieces to remind viewers that movement is a kind of conversation: we touch the world, and the world answers back.
