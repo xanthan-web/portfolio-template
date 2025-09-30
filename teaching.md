@@ -1,7 +1,10 @@
 ---
 title: Teaching
 layout: base
-date: 2025-09-10
+date: 2025-09-30
+homepage: TRUE
+summary: My teaching philosophy
+thumbnail: assets/images/nautilus-4.jpg
 ---
 
 ## How I Approach Teaching
