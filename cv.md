@@ -3,7 +3,7 @@ title: Curriculum Vitae
 layout: base
 homepage: TRUE
 summary: My CV contains info about my work experience and more
-thumbnail: assets/images/tent-rocks.jpg
+thumbnail: assets/images/nautilus-1.jpg
 ---
 
 # Alexandra Ruiz
