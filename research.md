@@ -1,8 +1,11 @@
 ---
 title: Research
-date: 2025-09-10
+layout: base
+date: 2025-09-30
+homepage: TRUE
+summary: My current research projects
+thumbnail: assets/images/nautilus-3.jpg
 ---
-
 
 ## Research Interests
 
