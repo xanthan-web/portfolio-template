@@ -4,7 +4,7 @@ layout: base
 date: 2025-09-30
 homepage: TRUE
 summary: My current research projects
-thumbnail: assets/images/nautilus-3.jpg
+thumbnail: assets/images/Cleve-van_construction-tower-babel.jpg
 ---
 
 ## Research Interests
