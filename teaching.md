@@ -4,7 +4,7 @@ layout: base
 date: 2025-09-30
 homepage: TRUE
 summary: My teaching philosophy
-thumbnail: assets/images/nautilus-4.jpg
+thumbnail: assets/images/great-lecture.jpg
 ---
 
 ## How I Approach Teaching
