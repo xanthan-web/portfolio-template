@@ -70,12 +70,12 @@ p {
 a {
   color: var(--text-link);
   text-decoration: none;
-  border-bottom: 1px dotted var(--text-link);
+  border-bottom: var(--text-link);
 }
 
 a:visited {
  color: var(--text-link);
- border-bottom: 1px dotted var(--text-link);
+ border-bottom: var(--text-link);
 }
 
 a:hover {
