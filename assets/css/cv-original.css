@@ -1,0 +1,237 @@
+/* === CV Theme === */
+/* this is meant to be loaded after all the other .css files */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* --- Color Palette --- */
+:root {
+  --charcoal: #1C1C1C;
+  --navy: #0E1A2B;
+  --lime: #48DA9B;
+  --blackgreen: #3a423f;
+  --cream: #c6c4bd;
+  --red: #D62828;
+  --ochre: hsl(48, 100%, 44%);
+  --teal: #009FB7;
+  --sage: #A3B18A;
+
+  --text-main: var(--cream);
+  --text-muted: #bcbcbc;
+  --bg-main: var(--blackgreen);
+  --bg-alt: var(--charcoal);
+  --accent: var(--lime);
+}
+
+
+/*****************************************************
+PAGE SETUP
+*****************************************************/
+
+html, body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.2rem;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.container {
+  max-width: 55rem;
+  margin: 0 auto;
+  clear: both;
+}
+
+
+/* --- Headings --- */
+h1, h2, h3, h4 {
+  margin-bottom: 0.5rem;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: var(--accent);
+}
+
+h2 {
+  font-size: 2.0rem;
+  color: var(--ochre);
+}
+
+h3 {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  color: var(--teal);
+}
+
+h4 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+p {
+  font-size: 18px;
+}
+
+
+/* --- Code blocks --- */
+.highlight {
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  font-size: .9em;
+  background: #7ec4ea;
+  color: #333;
+  border-radius: 8px;
+}
+
+
+/* --- Links --- */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  position: relative;
+  font-weight: 600;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.1s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+/* --- Navbar --- */
+nav {
+  background: var(--bg-alt);
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  font-family: "Space Mono", monospace;
+  color: var(--cream);
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+
+
+
+/* --- Cards/Blocks --- */
+.card {
+  background: var(--cream);
+  color: var(--charcoal);
+  padding: 2em;
+  margin: 1em 0;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+
+
+/*****************************************************
+ToC ROWS
+*****************************************************/
+
+.toc-row {
+  background-color: var(--bg-alt, #1C1C1C);
+  border-left: 3px solid var(--accent, #D62828);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.toc-row:hover {
+  background-color: var(--charcoal, #1a1a1a);
+  border-left-color: var(--teal, #009FB7);
+  transform: translateX(8px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.toc-row a {
+}
+
+
+.toc-row img.card-image {
+}
+
+.toc-row h3 {
+  font-size:150%;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: var(--cream, #c6c4bd);
+}
+
+.toc-row p {
+}
+
+.toc-body {
+}
+
+.toc-arrow {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 2rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.toc-row:hover .toc-arrow {
+  opacity: 1;
+}
+
+
+
+/* --- Buttons --- */
+button,
+.btn {
+  background: var(--accent);
+  color: var(--cream);
+  border: none;
+  padding: 0.75em 1.5em;
+  font-family: "Space Mono", monospace;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--ochre);
+}
+
+
+
+/* --- Footer --- */
+footer {
+  background: var(--charcoal);
+  padding: 2em;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}

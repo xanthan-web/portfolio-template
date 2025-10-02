@@ -3,7 +3,8 @@ title: Research
 layout: base
 date: 2025-09-30
 homepage: TRUE
-summary: My current research projects
+position: 1
+summary: My research investigates how digital technology can reimagine public history and expand access to cultural heritage. I focus on virtual museums, interactive 3D reconstructions, and community-driven archives in the U.S. Southwest and borderlands. By integrating data visualization, GIS mapping, and ethical digitization practices, I aim to craft historical narratives that are both inclusive and engaging for diverse audiences.
 thumbnail: assets/images/Cleve-van_construction-tower-babel.jpg
 ---
 

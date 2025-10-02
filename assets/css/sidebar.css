@@ -17,3 +17,30 @@ h2 {
     margin-top: 2rem;
     margin-bottom: .5rem;
   }
+
+/* --- Sidebar Links --- */
+.sidebar-link {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  color: var(--text-muted) !important;
+  transition: color 0.2s ease;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.sidebar-link:hover {
+  color: var(--accent) !important;
+}
+
+.sidebar-link::after {
+  display: none;
+}
+
+.sidebar-link i {
+  margin-right: 0.75rem;
+  width: 1.2rem;
+  text-align: center;
+}

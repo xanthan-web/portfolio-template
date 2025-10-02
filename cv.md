@@ -1,9 +1,10 @@
 ---
 title: Curriculum Vitae
 layout: base
-css: cv.css
+css: cv-dark.css
 homepage: TRUE
-summary: My CV contains info about my work experience and more
+position: 4
+summary: My CV reflects a career at the intersection of creative practice, research, and pedagogy. It documents publications, grants, teaching, and collaborative projects, showing how my work in digital humanities, kinetic sculpture, and public engagement has evolved over time. This record provides insight into the diverse ways I connect scholarship, creativity, and community impact.
 thumbnail: assets/images/Augustine_Lateran.jpg
 ---
 
@@ -16,19 +17,16 @@ Website: [www.alexruizdh.com](http://www.alexruizdh.com) • [LinkedIn](http://l
 ## Education
 
 ### Ph.D. Candidate, Digital Humanities
-*Southwest State University, Department of History and Digital Studies*  
-2021–present  
+*Southwest State University, Department of History and Digital Studies*, 2021–present  
 - Dissertation (in progress): *Reimagining the Archive: Virtual Museums and Public Engagement in the U.S. Southwest*  
-- Advisor: Dr. Michael Tran  
+- Advisor: Dr. Jeff Tran  
 
 ### M.A. Public History
-*University of the Desert*  
-2018–2020  
+*University of the Desert*, 2018–2020  
 - Thesis: *Digitizing Memory: Community-Driven Archives in Borderlands History*  
 
 ### B.A. History, Minor in Computer Science
-*Canyon State College*  
-2014–2018  
+*Canyon State College*, 2014–2018  
 
 ---
 
@@ -44,22 +42,19 @@ Website: [www.alexruizdh.com](http://www.alexruizdh.com) • [LinkedIn](http://l
 ## Professional Experience
 
 ### Graduate Research Assistant, Digital Heritage Lab
-*Southwest State University*  
-2021–present  
+*Southwest State University*, 2021–present  
 - Developed interactive 3D reconstructions of historic sites for virtual museum exhibitions.  
 - Managed metadata and digitization workflows for oral history collections.  
 - Co-designed community workshops on digital storytelling.  
 
 ### Public History Intern, Borderlands History Museum
-*El Paso, TX*  
-2019–2020  
+*El Paso, TX*, 2019–2020  
 - Assisted in curating an online exhibit on migration narratives.  
 - Coordinated community digitization days with local families.  
 - Designed educational activities integrating GIS maps with oral histories.  
 
 ### Teaching Assistant, Introduction to Public History
-*University of the Desert*  
-2018–2019  
+*University of the Desert*, 2018–2019  
 - Taught discussion sections; developed digital resources for students.  
 
 ---
@@ -73,7 +68,7 @@ Website: [www.alexruizdh.com](http://www.alexruizdh.com) • [LinkedIn](http://l
 
 ## Publications
 - Ruiz, Alexandra. *“Digitizing the Borderlands: A Case Study in Community-Driven Archiving.”* *Journal of Public History and Technology* 12, no. 2 (2022): 45–62.  
-- Ruiz, Alexandra, and Michael Tran. *“Reimagining the Museum: Collaborative 3D Reconstruction as Public History.”* In *Digital Heritage in Practice*, ed. L. Johnson, Desert University Press, 2023.  
+- Ruiz, Alexandra, and Jeff Tran. *“Reimagining the Museum: Collaborative 3D Reconstruction as Public History.”* In *Digital Heritage in Practice*, ed. L. Johnson, Desert University Press, 2023.  
 
 ---
 

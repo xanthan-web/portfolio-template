@@ -12,7 +12,7 @@ TYPOGRAPHY
 
 html, body {
   font-family: 'Lora', sans-serif;
-  font-size: 1rem; /* 16px is base font size */
+  font-size: 1.1rem; /* 16px is base font size, so this makes it a little bigger for academic eyes */
   line-height: 1.4em;
 }
 

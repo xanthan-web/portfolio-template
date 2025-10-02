@@ -3,7 +3,8 @@ title: Teaching
 layout: base
 date: 2025-09-30
 homepage: TRUE
-summary: My teaching philosophy
+position: 2
+summary: I view lectures as opportunities to model expert thinking and clarify complex ideas, building a strong intellectual foundation for students. From this base, I encourage critical engagement through discussion, writing, and applied projects. My teaching balances structured guidance with interactive learning, helping students navigate challenging material with confidence while fostering curiosity, reflection, and active participation.
 thumbnail: assets/images/great-lecture.jpg
 ---
 
