@@ -56,9 +56,9 @@ h5 {
 hr {
   display: block;
   height: 0;
-  margin: 3rem 0rem;
+  margin: 2rem 0rem;
   clear: both;
-  border: 4px solid #333;
+  border: 3px solid #333;
 }
 
 p {

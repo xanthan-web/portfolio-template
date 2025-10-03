@@ -6,18 +6,22 @@
     object-fit: cover;
 }
 
-p {
-    line-height: 1.6em;
-    margin-bottom: 1.5em;
+.sidebar p, .profile p {
+    font-size: 0.9rem;
+    line-height: 1.5em;
+    margin-bottom: 1.2em;
     text-align: left;
   }
 
-h2 {
-    font-size: 1 rem;
+
+.sidebar h2 {
+    font-size: 1rem;
     margin-top: 2rem;
     margin-bottom: .5rem;
   }
 
+
+  
 /* --- Sidebar Links --- */
 .sidebar-link {
   font-family: "Source Sans Pro", sans-serif !important;

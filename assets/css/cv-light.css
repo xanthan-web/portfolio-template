@@ -1,0 +1,345 @@
+/* === CV Clean Theme === */
+/* 
+ * Conservative black-on-white design with subtle creative touches
+ * 
+ * Features:
+ * - Crimson Text serif headings + Source Sans Pro body text
+ * - Clean white background with professional blue/gold accents
+ * - Subtle hover effects and transitions
+ * - Print-friendly color scheme
+ * 
+ * To use: Replace cv.css import with cv-light.css in your layout
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+/* --- Color Palette --- */
+:root {
+  --charcoal: #2c2c2c;
+  --navy: #1a2332;
+  --deep-blue: #1e3a5f;
+  --warm-gray: #5a5a5a;
+  --light-gray: #f8f8f8;
+  --border-gray: #e5e5e5;
+  --accent-blue: #2563eb;
+  --accent-gold: #d97706;
+  --success-green: #059669;
+
+  --text-main: #1a1a1a;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  --bg-main: #ffffff;
+  --bg-alt: #fafafa;
+  --bg-section: #f9fafb;
+  --accent: var(--accent-blue);
+  --accent-secondary: var(--accent-gold);
+}
+
+
+/*****************************************************
+PAGE SETUP
+*****************************************************/
+
+html, body {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-weight: 400;
+}
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  clear: both;
+}
+
+
+/* --- Headings --- */
+h1, h2, h3, h4 {
+  font-family: "Crimson Text", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+}
+
+h1 {
+  font-size: 3.2rem;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--deep-blue);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--border-gray);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+  font-size: 1.5rem;
+  color: var(--warm-gray);
+  font-weight: 600;
+}
+
+h4 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--warm-gray);
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+  color: var(--text-main);
+}
+
+
+/* --- Horizontal Rules --- */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--border-gray);
+  margin: 1.5rem 0;
+  opacity: 0.3;
+}
+
+
+/* --- Code blocks --- */
+.highlight {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', 'Menlo', monospace;
+  font-size: 0.9em;
+  background: var(--bg-section);
+  color: var(--text-main);
+  border: 1px solid var(--border-gray);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+
+/* --- Links --- */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  background: var(--accent-secondary);
+}
+
+
+
+/* --- Navbar --- */
+nav {
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--border-gray);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+nav a {
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--text-main);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background: var(--bg-section);
+  color: var(--accent);
+}
+
+nav a::after {
+  display: none;
+}
+
+
+/* --- Cards/Blocks --- */
+.card {
+  background: var(--bg-main);
+  color: var(--text-main);
+  padding: 1.75rem;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+/* --- Card Images --- */
+.card .row {
+  align-items: stretch;
+}
+
+.card .col-sm-4 {
+  display: flex;
+}
+
+.card .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  flex: 1;
+}
+
+
+
+/*****************************************************
+ToC ROWS
+*****************************************************/
+
+.toc-row {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-gray);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0.75rem 0;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.toc-row:hover {
+  background-color: var(--bg-section);
+  border-left-color: var(--accent-secondary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateX(4px);
+  cursor: pointer;
+}
+
+.toc-row a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc-row a::after {
+  display: none;
+}
+
+.toc-row img.card-image {
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toc-row h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  font-family: "Crimson Text", serif;
+}
+
+.toc-row p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.toc-body {
+  flex: 1;
+}
+
+.toc-arrow {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 1rem;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  color: var(--accent);
+}
+
+.toc-row:hover .toc-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+  color: var(--accent-secondary);
+}
+
+
+
+/* --- Buttons --- */
+button,
+.btn {
+  background: var(--accent);
+  color: white;
+  border: 2px solid var(--accent);
+  padding: 0.75rem 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover,
+.btn:hover {
+  background: white;
+  color: var(--accent);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transform: translateY(-1px);
+}
+
+
+
+/* --- Footer --- */
+footer {
+  background: var(--bg-section);
+  border-top: 1px solid var(--border-gray);
+  padding: 2rem 0;
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
