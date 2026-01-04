@@ -10,7 +10,7 @@ thumbnail: assets/images/ai-created-kinetic-sculpture.png
 
 ## Kinetic Sculptures
 
-{% include figure.html
+{% include images/figure.html
   class="left"
   width="60%"
   caption="AI-generated kinetic sculpture"
