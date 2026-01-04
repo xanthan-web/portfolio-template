@@ -1,8 +1,8 @@
 {% capture img1_url %}
-{% include image-path.html image-path=include.image1 %}
+{% include images/image-path.html image-path=include.image1 %}
 {% endcapture %}
 {% capture img2_url %}
-{% include image-path.html image-path=include.image2 %}
+{% include images/image-path.html image-path=include.image2 %}
 {% endcapture %}
 <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="{{include.starting-position | default: 50%}}"
   data-label="{{include.data-label}}" data-credit="{{include.data-credit}}" data-showlabels="false"

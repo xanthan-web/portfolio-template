@@ -1,5 +1,5 @@
 {% capture image-path %}
-{% include image-path.html
+{% include images/image-path.html
   image-path=include.image-path 
 %}
 {% endcapture %}
@@ -11,8 +11,9 @@
 {:/nomarkdown}
 
 <div class="jumbotron" style="
-      height: {{ include.height | default: '40vh' }}; 
-      background-image: url('{{ img_url }}')">
+      height: {{ include.height | default: '40vh' }};
+      background-image: url('{{ img_url }}');
+      background-position: {{ include.background-position }};">
     <h1 id="page-title">{{ include.title}}</h1>
     <h2 id="page-subtitle">{{ include.text }}</h2>
 </div>

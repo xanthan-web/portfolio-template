@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
 
-  {% include page-header.html %}
+{% include html/html-head.html %}
 
-  <body>
-    
-    <div class="page-wrap">
+<!-- Map-specific CSS -->
+<link rel="stylesheet" href="{{ '/assets/css/map.css' | relative_url }}">
 
-      {% include nav-top.html %}
+<body>
 
-      {{ content }}
+  <div class="page-wrap">
 
-      {% include page-footer.html %}
+    {% include nav/nav-top.html %}
 
-    </div> <!-- /page-wrap -->
+    {{ content }}
 
-    {% if jekyll.environment == 'production' and site.analytics_id %}{% include google_analytics.html %}{% endif %}
+    {% include layout/footer.html %}
 
-    {% include page-js.html %}
+  </div> <!-- /page-wrap -->
 
-  </body>
+  {% if jekyll.environment == 'production' and site.analytics_id %}{% include google_analytics.html %}{% endif %}
+
+  {% include html/html-js.html %}
+
+</body>
+
 </html>
