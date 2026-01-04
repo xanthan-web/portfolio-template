@@ -1,0 +1,128 @@
+/*****************************************************
+SIDEBAR NAVIGATION
+Profile-based sidebar for portfolio sites
+*****************************************************/
+
+.left-bar {
+  /* Box Model - no padding, just layout container */
+  padding: 0;
+}
+
+.sidebar {
+  /* Box Model */
+  padding: var(--spacing-md);
+
+  /* Visual */
+  background: var(--bg-card);
+  border-right: 1px solid var(--accent-border);
+}
+
+/* Profile Section */
+.sidebar .profile {
+  /* Box Model */
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+
+  /* Visual */
+  border-bottom: 1px solid var(--accent-border);
+  text-align: center;
+}
+
+.sidebar .profile img {
+  /* Box Model */
+  width: 150px;
+  height: 150px;
+  margin: 0 auto var(--spacing-md);
+
+  /* Visual */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-border);
+}
+
+.sidebar .profile h2 {
+  /* Box Model */
+  margin: 0 0 var(--spacing-xs) 0;
+
+  /* Typography */
+  font-size: 1.5rem;
+  color: var(--text-body);
+}
+
+.sidebar .profile p {
+  /* Box Model */
+  margin: 0;
+
+  /* Typography */
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Navigation Links */
+.sidebar ul {
+  /* Box Model */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  /* Box Model */
+  margin-bottom: var(--spacing-xs);
+}
+
+.sidebar-link {
+  /* Display */
+  display: block;
+
+  /* Box Model */
+  padding: var(--spacing-xs) var(--spacing-sm);
+
+  /* Typography */
+  text-decoration: none;
+  color: var(--text-body);
+  font-size: 0.95rem;
+
+  /* Visual */
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.sidebar-link:hover {
+  /* Visual */
+  background: var(--accent-border-weak);
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.sidebar-link i {
+  /* Box Model */
+  margin-right: var(--spacing-xs);
+
+  /* Typography */
+  width: 1.2em;
+  text-align: center;
+}
+
+/* Link Font Weight Options */
+.sidebar-link.link-fw-bold {
+  font-weight: 600;
+}
+
+.sidebar-link.link-fw-normal {
+  font-weight: 400;
+}
+
+/* Responsive: Full Width on Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--accent-border);
+  }
+
+  .sidebar .profile img {
+    width: 120px;
+    height: 120px;
+  }
+}
