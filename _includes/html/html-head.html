@@ -44,21 +44,13 @@
   
   <!-- <link href="{{site.baseurl}}/assets/css/dark-energy.css" rel="stylesheet"> -->
 
-  <!-- scrollstory layout CSS
+  <!-- scrollstory layout CSS 
     To differentiate scrollstory pages from regular pages, we use a special layout value in the YAML front matter
     and load the scrollstory.css file.
   -->
 
   {% if page.layout == 'scrollstory' %}
   <link href="{{site.baseurl}}/assets/css/scrollstory.css" rel="stylesheet">
-  {% endif %}
-
-  <!-- sidebar layout CSS
-    For pages using left-profile or left-nav layouts, load the sidebar CSS
-  -->
-
-  {% if page.layout == 'left-profile' or page.layout == 'left-nav' %}
-  <link href="{{site.baseurl}}/assets/css/sidebar.css" rel="stylesheet">
   {% endif %}
 
   <!-- page specific CSS -->
