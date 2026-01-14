@@ -1,111 +1,77 @@
 /*****************************************************
-SIDEBAR NAVIGATION
+PROFILE SIDEBAR
 Profile-based sidebar for portfolio sites
 *****************************************************/
 
 .left-bar {
-  /* Box Model - no padding, just layout container */
-  padding: 0;
-}
-
-.sidebar {
-  /* Box Model */
   padding: var(--spacing-md);
-
-  /* Visual */
   background: var(--bg-card);
   border-right: 1px solid var(--accent-border);
 }
 
-/* Profile Section */
-.sidebar .profile {
-  /* Box Model */
+.profile {
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
-
-  /* Visual */
   border-bottom: 1px solid var(--accent-border);
   text-align: center;
 }
 
-.sidebar .profile img {
-  /* Box Model */
-  width: 150px;
-  height: 150px;
+.profile img {
+  width: 100%;
+  height: auto;
   margin: 0 auto var(--spacing-md);
-
-  /* Visual */
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent-border);
+  display: block;
 }
 
-.sidebar .profile h2 {
-  /* Box Model */
+.profile h2 {
   margin: 0 0 var(--spacing-xs) 0;
-
-  /* Typography */
   font-size: 1.5rem;
+  text-align: center;
   color: var(--text-body);
 }
 
-.sidebar .profile p {
-  /* Box Model */
-  margin: 0;
-
-  /* Typography */
+.profile p {
+  margin: 1rem 0 0 0;
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.5;
 }
 
-/* Navigation Links */
-.sidebar ul {
-  /* Box Model */
+.left-bar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sidebar li {
-  /* Box Model */
+.left-bar li {
   margin-bottom: var(--spacing-xs);
 }
 
 .sidebar-link {
-  /* Display */
   display: block;
-
-  /* Box Model */
   padding: var(--spacing-xs) var(--spacing-sm);
-
-  /* Typography */
   text-decoration: none;
   color: var(--text-body);
   font-size: 0.95rem;
-
-  /* Visual */
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
 }
 
 .sidebar-link:hover {
-  /* Visual */
   background: var(--accent-border-weak);
   color: var(--accent-primary);
   text-decoration: none;
 }
 
 .sidebar-link i {
-  /* Box Model */
   margin-right: var(--spacing-xs);
-
-  /* Typography */
   width: 1.2em;
   text-align: center;
 }
 
-/* Link Font Weight Options */
 .sidebar-link.link-fw-bold {
   font-weight: 600;
 }
@@ -114,15 +80,15 @@ Profile-based sidebar for portfolio sites
   font-weight: 400;
 }
 
-/* Responsive: Full Width on Mobile */
+/* Mobile responsive */
 @media (max-width: 768px) {
-  .sidebar {
+  .left-bar {
     border-right: none;
     border-bottom: 1px solid var(--accent-border);
   }
 
-  .sidebar .profile img {
-    width: 120px;
-    height: 120px;
+  .profile img {
+    width: 80px;
+    height: 80px;
   }
 }
