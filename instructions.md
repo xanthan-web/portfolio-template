@@ -231,34 +231,12 @@ You don't need to know HTML! Use simple markdown:
 **See examples** in the existing pages—just copy the formatting you like!
 
 
-## Advanced Features
-
 ### ScrollStories
 
 For visual narrative essays with scrolling effects:
 - Check the `scrollstories/` folder for examples
 - Read the [ScrollStory Documentation](https://xanthan-web.github.io/xanthan/docs/scrollstories/)
 - Create immersive stories with background images and scrolling text
-
-
-### Maps
-
-For geospatial projects:
-- See `map.md` for an example
-- Read the [Maps Documentation](https://xanthan-web.github.io/xanthan/docs/content-design/maps/)
-- Embed interactive maps with markers and layers
-
-
-### Card Grids and Galleries
-
-Display projects in grid layouts:
-
-```liquid
-{% assign items = site.pages | where: "section", "projects" %}
-{% include card-grid.html cards = items %}
-```
-
-See [Layout Components](https://xanthan-web.github.io/xanthan/docs/content-design/layouts/) for more.
 
 
 ## Getting Help
