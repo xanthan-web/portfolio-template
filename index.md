@@ -1,6 +1,6 @@
 ---
 title: Alexandra Ruiz
-layout: left-profile
+layout: nav-profile
 date: 2024-12-02
 ---
 
