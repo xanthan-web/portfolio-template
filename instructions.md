@@ -37,9 +37,10 @@ The easiest way to edit your site is using GitHub's built-in VS Code editor:
 
 ### 1. Update Your Name and Bio (`index.md`)
 
-Open `index.md` and change:
+Open `index.md` and replace the template introduction with your own name and bio:
 - **Your name** in the title and heading
 - **Your bio paragraph** — describe your work and interests
+- Remove the template intro text and documentation links
 - Keep the card stack code at the bottom (it auto-generates links to your pages)
 
 ```yaml
@@ -51,6 +52,9 @@ layout: nav-profile
 # Your Name Here
 
 Write a short intro about yourself and your work...
+
+{% assign essays = site.pages | where: "homepage", true %}
+{% include nav/card-stack.html cards = essays %}
 ```
 
 
@@ -272,8 +276,9 @@ Once you've customized your portfolio and feel comfortable editing:
 
 1. **Delete this file** (`instructions.md`)
    - Right-click in VS Code and select "Delete"
-2. **Remove from navigation** (if you added it to `nav-top.yml`)
-3. Keep updating your portfolio with new work!
+2. **Remove from navigation** — Open `_data/nav-top.yml` and delete the Instructions entry
+3. **Remove the instruction notes** from the top of each content page (the `> ✏️ Template Instructions:` callout boxes)
+4. Keep updating your portfolio with new work!
 
 
 ## Quick Reference

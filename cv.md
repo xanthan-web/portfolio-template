@@ -8,6 +8,9 @@ summary: My CV reflects a career at the intersection of creative practice, resea
 thumbnail: assets/images/Augustine_Lateran.jpg
 ---
 
+> **✏️ Template Instructions:** This is your **CV page**. Replace the sample CV below with your own curriculum vitae. The `summary` and `thumbnail` in the front matter control how this page appears on the homepage card stack. See the [Instructions page](../instructions) for a complete guide.
+
+
 # Alexandra Ruiz
 Email: aruiz@university.edu • Phone: (505) 555-3482  
 Website: [www.alexruizdh.com](http://www.alexruizdh.com) • [LinkedIn](http://linkedin.com/in/alexruizdh)  
@@ -82,4 +85,19 @@ Website: [www.alexruizdh.com](http://www.alexruizdh.com) • [LinkedIn](http://l
 ## Extracurricular Activities
 - Co-organizer, *DH Praxis Workshop* for graduate students across disciplines (2022–present)  
 - Volunteer, *Code for Community* initiative, offering coding workshops for local high school students (2021–present)  
-- Member, Digital Public History Working Group, National Council on Public History  
+- Member, Digital Public History Working Group, National Council on Public History
+
+---
+
+### Customizing This Page
+
+Replace the CV above with your own. Here are some tips:
+
+- **Keep the markdown formatting** — The headings (`##`, `###`), bold text (`**...**`), and horizontal rules (`---`) give your CV a clean, scannable layout
+- **Standard CV sections** — Education, Experience, Publications, Presentations, Awards, and Skills are the most common; include only what's relevant to you
+- **Links** — You can link to DOIs, conference websites, or project pages using `[link text](url)` 
+- **PDF option** — Consider also uploading a PDF version of your CV to `assets/` and linking to it near the top of this page, right after the instruction callout:
+  ```markdown
+  [Download PDF version]({{ site.baseurl }}/assets/cv.pdf)
+  ```
+- **Front matter tip:** Update the `summary:` to describe your background in one or two sentences — this is what appears on the homepage card
