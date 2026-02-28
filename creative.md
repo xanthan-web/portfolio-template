@@ -8,6 +8,9 @@ summary: I create kinetic sculptures that invite steel, wood, and glass to dance
 thumbnail: assets/images/ai-created-kinetic-sculpture.png
 ---
 
+> **✏️ Template Instructions:** This is your **Creative page**. Replace the sample content below with your own creative work—art, design, digital projects, performances, or any creative practice you want to feature. The `summary` and `thumbnail` in the front matter control how this page appears on the homepage card stack. See the [Instructions page](../instructions) for a complete guide.
+
+
 ## Kinetic Sculptures
 
 {% include images/figure.html
@@ -22,3 +25,17 @@ My work begins with wind and ends with rhythm. I am fascinated by the unnoticed 
 I draw inspiration from the mechanics of insect wings, the pendulum swings of old clocks, and the ritual motions of daily human life—stirring tea, hanging laundry, pacing while thinking. I use simple materials, but they are carefully tuned so that the smallest nudge—a breeze, a passerby’s presence, a vibration in the floor—sets them in motion. I want my pieces to remind viewers that movement is a kind of conversation: we touch the world, and the world answers back.
 
 Ultimately, my sculptures are experiments in patience and perception. They reward the slow observer—the one who lingers long enough to notice a sudden spin, a gradual oscillation, a flash of sunlight refracting through a moving panel. Each piece is a kind of clock that doesn’t tell time but instead reveals the hidden choreography of a particular place. If you stand quietly enough, you can feel that choreography in your body, and perhaps find yourself moving in response.
+
+---
+
+### Customizing This Page
+
+Replace the content above with your own creative work. Here are some ideas for what to include:
+
+- **Artist statement** — Your creative philosophy, influences, and goals
+- **Portfolio of work** — Images, descriptions, and links for individual projects or pieces
+- **Exhibitions and performances** — Where and when your work has been shown
+- **Commissions and collaborations** — Projects created with or for others
+- **Process notes** — Behind-the-scenes documentation of how you make things
+
+**Tip:** This page doesn't have to be about art—use it for any creative or applied work that doesn't fit neatly into "Research" or "Teaching." Digital projects, public history work, design, film, music, coding—all fair game. You can also rename this page entirely (e.g., rename this file to `projects.md` and update the nav in `_data/nav-top.yml` to match).
