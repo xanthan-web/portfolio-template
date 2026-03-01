@@ -1,52 +1,70 @@
 ---
 title: Documentation
-layout: base
-date: 2026-01-04
-summary: Complete documentation for the Xanthan framework
+layout: xanthan
+date: 2026-01-01
+summary: Documentation for your Xanthan site, matched to the code in this repository.
 ---
 
-# Xanthan Documentation
+# Documentation
 
-This documentation matches the version of Xanthan code in your repository. For the latest features and updates, visit [xanthan-web.github.io/xanthan](https://xanthan-web.github.io/xanthan/).
+This documentation is bundled with your site and matches the version of Xanthan code you're running. For the latest updates, visit [xanthan-web.github.io/xanthan](https://xanthan-web.github.io/xanthan/).
 
-Choose a section to explore:
-
-{% assign getting_started = site.pages | where_exp: "page", "page.path contains 'docs/getting-started'" | sort: "order" %}
-{% assign content_design = site.pages | where_exp: "page", "page.path contains 'docs/content-design'" | sort: "order" %}
-{% assign navigation = site.pages | where_exp: "page", "page.path contains 'docs/navigation'" | sort: "order" %}
-{% assign scrollstories = site.pages | where_exp: "page", "page.path contains 'docs/scrollstories'" | sort: "order" %}
+---
 
 ## Getting Started
 
-{% include nav/card-toc.html rows=getting_started %}
+From zero to a live site in 15 minutes. Choose a template, create your repository, make your first edit.
+
+{% assign gs = site.pages | where_exp: "pg", "pg.path contains 'docs/getting-started/'" | sort: "title" %}
+{% for pg in gs %}{% unless pg.path contains 'index' %}
+- [{{ pg.title }}]({{ pg.url }})
+{% endunless %}{% endfor %}
 
 ---
 
-## Content & Design
+## Editing
 
-{% include nav/card-toc.html rows=content_design %}
+Make it yours. Pages, typography, images, colors, navigation — everything you need to customize your site.
+
+{% assign ed = site.pages | where_exp: "pg", "pg.path contains 'docs/editing/'" | sort: "title" %}
+{% for pg in ed %}{% unless pg.path contains 'index' %}
+- [{{ pg.title }}]({{ pg.url }})
+{% endunless %}{% endfor %}
 
 ---
 
-## Navigation
+## Reference
 
-{% include nav/card-toc.html rows=navigation %}
+Look things up. Site structure, component library, front matter, and troubleshooting.
+
+{% assign ref = site.pages | where_exp: "pg", "pg.path contains 'docs/reference/'" | sort: "title" %}
+{% for pg in ref %}{% unless pg.path contains 'index' %}
+- [{{ pg.title }}]({{ pg.url }})
+{% endunless %}{% endfor %}
+
+---
+
+## Using AI
+
+Work with Claude, ChatGPT, or other AI assistants to customize your site faster.
+
+{% assign ai = site.pages | where_exp: "pg", "pg.path contains 'docs/using-ai/'" | sort: "title" %}
+{% for pg in ai %}{% unless pg.path contains 'index' %}
+- [{{ pg.title }}]({{ pg.url }})
+{% endunless %}{% endfor %}
 
 ---
 
 ## ScrollStories
 
-{% include nav/card-toc.html rows=scrollstories %}
+Build immersive, scroll-driven visual narratives.
 
----
-
-## Additional Resources
-
-- [Main Xanthan Site](https://xanthan-web.github.io/xanthan/) - Latest documentation and updates
-- [FAQs](/faqs) - Common questions and answers
-- [About Xanthan](/about) - Philosophy and approach
+{% assign ss = site.pages | where_exp: "pg", "pg.path contains 'docs/scrollstories/'" | sort: "title" %}
+{% for pg in ss %}{% unless pg.path contains 'index' %}
+- [{{ pg.title }}]({{ pg.url }})
+{% endunless %}{% endfor %}
 
 ---
 
 {: .text-muted}
-**Note:** You can safely delete this `/docs/` folder whenever you want. However, you might keep it for reference and remove the link from your top-nav.
+You can remove the `/docs` link from your navigation whenever you like — the documentation will still be there if you need it.
