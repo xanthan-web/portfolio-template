@@ -1,10 +1,10 @@
 settings:
   links_font_weight: normal
 
-image_url: /assets/images/profile/headshot_sketch.png
-alt_text: "Sample profile photo"
-name: Jordan Casey
-description: A digital humanist and scholar exploring innovative approaches to digital research and public engagement. Passionate about open-source tools and collaborative scholarship.
+image_url: /assets/images/profile/eduardo-goody-MQ-Rkg64jf4-unsplash.jpg
+alt_text: "Your profile photo"
+name: Your Name
+description: Replace this with a short bio — one or two sentences describing who you are and what you do. This appears under your photo in the sidebar.
 
 links:
   - title: Personal Website

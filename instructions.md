@@ -15,14 +15,13 @@ This portfolio template includes:
 - **Teaching page** (`teaching.md`) for courses and pedagogy
 - **Creative page** (`creative.md`) for projects, exhibitions, and creative work
 - **CV page** (`cv.md`) for your full curriculum vitae
-- **ScrollStories folder** (`scrollstories/`) for visual narrative essays
-- **Map page** (`map.md`) for geospatial projects
-- All styling, navigation, and design pre-configured
+- **Instructions** (`instrcutions.md`) for updating your new site!
+- **Docs** (`docs folder`) with full Xanthan documentation (since Xanthan itself may have changed a bit)
+
 
 
 ## Quick Start: Open the Editor
-
-The easiest way to edit your site is using GitHub's built-in VS Code editor:
+The easiest way to edit your site is using GitHub's built-in editor:
 
 1. Go to your repository on GitHub
 2. Press the **`.` (period) key** on your keyboard
@@ -33,14 +32,11 @@ The easiest way to edit your site is using GitHub's built-in VS Code editor:
 **To save changes:** Press **Ctrl+S** (Windows/Linux) or **Cmd+S** (Mac)
 
 
-## First Steps: Personalize Your Site
+## 1. Update Your Name and Bio (`index.md`)
 
-### 1. Update Your Name and Bio (`index.md`)
-
-Open `index.md` and replace the template introduction with your own name and bio:
+Open `index.md` and change:
 - **Your name** in the title and heading
 - **Your bio paragraph** — describe your work and interests
-- Remove the template intro text and documentation links
 - Keep the card stack code at the bottom (it auto-generates links to your pages)
 
 ```yaml
@@ -52,45 +48,17 @@ layout: nav-profile
 # Your Name Here
 
 Write a short intro about yourself and your work...
-
-{% assign essays = site.pages | where: "homepage", true %}
-{% include nav/card-stack.html cards = essays %}
 ```
 
 
-### 2. Edit the Research Page (`research.md`)
-
-Open `research.md` and replace the sample content:
-- Add your publications, papers, and projects
-- Update descriptions and links
-- Change the summary in the front matter (top section)
-
-
-### 3. Update Teaching (`teaching.md`)
-
-Open `teaching.md` and add:
-- Courses you've taught
-- Your teaching philosophy
-- Student projects or examples
+## 2. Edit or delete included pages 
+- `research.md`
+- `teaching.md`
+- `creative.md`
+- `cv.md` (and see the note on that page about using AI to reformat a Word doc for your webpage.)
 
 
-### 4. Customize Creative Work (`creative.md`)
-
-Open `creative.md` and showcase:
-- Exhibitions, installations, or performances
-- Digital projects or multimedia work
-- Creative collaborations
-
-
-### 5. Replace the CV (`cv.md`)
-
-Open `cv.md` and update with your actual CV:
-- Education, experience, awards
-- Publications and presentations
-- Skills and competencies
-
-
-## Adding a New Page
+## 3. Adding a New Page
 
 Want to add a page (like "Blog" or "Projects")? Here's how:
 
@@ -171,17 +139,17 @@ For more control over image display, use Xanthan's built-in includes:
 %}
 ```
 
-See the [Xanthan Image Documentation](https://xanthan-web.github.io/xanthan/docs/content-design/images/) for all options.
+See the [Xantha Docs on your site](docs) for all options.
 
 
-## Customizing Your Site
-
-### Update Site Settings (`_config.yml`)
+## Update site metadata 
 
 Open `_config.yml` to change:
 - **Site title and description**
 - **Your URL** (if you have a custom domain)
 - **Author info**
+
+Your file should look something like:
 
 ```yaml
 title: Your Name - Portfolio
@@ -204,15 +172,12 @@ Just edit these files to add/remove/reorder menu items.
 
 ### Change Colors and Styles
 
-For custom colors, fonts, and styling:
-1. Read the [Xanthan Styling Guide](https://xanthan-web.github.io/xanthan/docs/content-design/styling/)
-2. Add custom CSS in `_includes/` or `assets/css/`
-3. Override Xanthan defaults in your own style files
+For custom colors, fonts, and styling, read the [Xanthan Styling Guide](docs/content-design). Again, AI can help you do whatever you need with plain language. 
 
 
 ## Using Markdown
 
-You don't need to know HTML! Use simple markdown:
+Of course you[ll want to use headings, italics, and other basic typography on your site ] Use simple markdown:
 
 ```markdown
 # Big Heading
@@ -249,7 +214,6 @@ For visual narrative essays with scrolling effects:
 
 Your template is built on **Xanthan**, which has extensive docs:
 - **Browse local docs**: `/docs/` folder in your repository
-- **Online docs**: [xanthan-web.github.io/xanthan/docs/](https://xanthan-web.github.io/xanthan/docs/)
 - **Troubleshooting**: [Common issues and fixes](https://xanthan-web.github.io/xanthan/docs/content-design/troubleshooting/)
 
 
@@ -276,32 +240,5 @@ Once you've customized your portfolio and feel comfortable editing:
 
 1. **Delete this file** (`instructions.md`)
    - Right-click in VS Code and select "Delete"
-2. **Remove from navigation** — Open `_data/nav-top.yml` and delete the Instructions entry
-3. **Remove the instruction notes** from the top of each content page (the `> ✏️ Template Instructions:` callout boxes)
-4. Keep updating your portfolio with new work!
-
-
-## Quick Reference
-
-### Essential Files
-- `index.md` — Homepage
-- `research.md`, `teaching.md`, `creative.md`, `cv.md` — Main pages
-- `_config.yml` — Site settings
-- `_data/nav-top.yml` — Navigation menu
-- `assets/images/` — Image storage
-
-### Common Tasks
-- **Add page**: Create `.md` file, add to `top-nav.yml`
-- **Add image**: Upload to `assets/images/`, reference with `![](path)`
-- **Edit nav**: Open `_data/top-nav.yml` or `sidebar.yml`
-- **Change layout**: Update `layout:` in page front matter
-
-### Helpful Links
-- [Xanthan Docs](https://xanthan-web.github.io/xanthan/docs/)
-- [Markdown Guide](https://www.markdownguide.org/)
-- [GitHub Pages Help](https://docs.github.com/en/pages)
-
----
-
-{: .text-center .text-muted}
-**Questions?** Check the [Xanthan documentation](https://xanthan-web.github.io/xanthan/) or [open an issue](https://github.com/xanthan-web/portfolio-template/issues).
+2. **Remove from navigation** (if you added it to `nav-top.yml`)
+3. Keep updating your portfolio with new work!

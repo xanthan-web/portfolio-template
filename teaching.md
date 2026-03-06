@@ -4,37 +4,43 @@ layout: base
 date: 2025-09-30
 homepage: TRUE
 position: 2
-summary: I view lectures as opportunities to model expert thinking and clarify complex ideas, building a strong intellectual foundation for students. From this base, I encourage critical engagement through discussion, writing, and applied projects. My teaching balances structured guidance with interactive learning, helping students navigate challenging material with confidence while fostering curiosity, reflection, and active participation.
+summary: Replace this with a sentence or two about your teaching — your approach, the courses you teach, or what you most want students to take away. This appears on the homepage card.
 thumbnail: assets/images/great-lecture.jpg
 ---
 
-> **✏️ Template Instructions:** This is your **Teaching page**. Replace the sample content below with your own teaching philosophy, courses, and materials. The `summary` and `thumbnail` in the front matter control how this page appears on the homepage card stack. See the [Instructions page](../instructions) for a complete guide.
+This is your Teaching page. Replace everything below this line with your own content.
 
-
-## How I Approach Teaching
-
-I believe that the lecture remains one of the most powerful tools for communicating knowledge. A well-crafted lecture allows an instructor to synthesize complex ideas, trace intellectual lineages, and model expert thinking in ways that students might struggle to discover on their own. By guiding learners through a structured, coherent narrative, a lecture can create clarity and momentum, sparking curiosity while ensuring that foundational knowledge is presented accurately and efficiently. The lecture hall is also a space where students can witness passion and intellectual rigor in real time — an opportunity to observe not just what scholars know, but how they think.
-
-{% include images/figure.html
-  class="right"
-  width="60%"
-  caption="What a nice view"
-  image-path="/assets/images/great-lecture.jpg"
-%}
-
-While I recognize the appeal of "student-centered" learning approaches, I am cautious of pedagogies that overly decentralize the classroom. Too much emphasis on group work or self-discovery risks leaving students without the necessary scaffolding to interpret what they encounter. Many students enter a course without the background or confidence to teach themselves complex material, and asking them to do so can create confusion rather than empowerment. My goal is to provide a strong intellectual framework through lecture, then invite students to engage critically with that framework through discussion, writing, and application — ensuring that their learning is built on a foundation of clarity, not guesswork.
+Teaching pages work well for a teaching philosophy statement, a list of courses you've taught, sample syllabi or assignments, and anything that shows how you work in the classroom. Add an image with `figure` or `figure-wrap` to make the page more visual — it's good practice for learning the components, and it makes the page more interesting to read.
 
 ---
 
-### Customizing This Page
+## Teaching Philosophy
 
-Replace the content above with your own teaching materials. Here are some ideas for what to include:
+Write a paragraph or two about how you approach teaching. What do you believe about how students learn? What are you trying to accomplish in the classroom? You don't need a formal teaching statement here — a direct, honest account of your approach is more compelling than polished boilerplate.
 
-- **Teaching philosophy** — Your approach to the classroom and student learning
-- **Courses taught** — List courses with brief descriptions (semesters, levels, topics)
-- **Course materials** — Links to syllabi, assignments, or sample readings
-- **Student work** — Highlights or examples (with permission)
-- **Workshops and guest lectures** — Invited teaching outside your regular courses
+{% include images/figure.html
+  class="right"
+  width="45%"
+  caption="Add an image that represents your teaching — a classroom, a field site, a project students built."
+  image-path="/assets/images/great-lecture.jpg"
+%}
 
-**Using images on this page:**
-The sample above shows a right-aligned image using Xanthan's `figure` include. You can use `class="left"` to align left, or remove the image block entirely. Upload your own images to `assets/images/` and update the `image-path` value.
+A second paragraph here works well. You can use this space to describe your methods, discuss a particular challenge you've worked through as a teacher, or explain what kinds of learning you prioritize.
+
+---
+
+## Courses
+
+### Course Name (Course Number)
+*Institution, Semester Year*  
+One sentence describing the course and who it's for.
+
+### Course Name (Course Number)
+*Institution, Semester Year*  
+One sentence describing the course and who it's for.
+
+---
+
+## Student Projects
+
+If your courses produce public-facing work — websites, video essays, research projects, archives — link to them here. This is one of the best ways to show what happens in your classroom.

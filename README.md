@@ -1,136 +1,69 @@
 # Xanthan Portfolio Template
 
-**A ready-to-use portfolio website template powered by [Xanthan](https://xanthan-web.github.io/xanthan/).**
-
-This template gives you a complete portfolio site with:
-- Professional homepage and about page
-- Profile sidebar with photo and links
-- Sample project pages and CV
-- All Xanthan design components ready to use
-- Free hosting on GitHub Pages
+A ready-to-use portfolio website built on the [Xanthan](https://xanthan-web.github.io/xanthan/) framework — Jekyll, GitHub Pages, Markdown.
 
 ## Quick Start
 
-**Get your site online in 10 minutes** by following the [Getting Started Guide](https://xanthan-web.github.io/xanthan/docs/getting-started/).
-
-1. Click "Use this template" → "Create a new repository"
+1. Click **"Use this template"** on GitHub to create your own repository
 2. Name your repository `YOUR-USERNAME.github.io`
-3. Configure GitHub Pages in Settings
-4. Edit the content to make it yours
+3. Enable GitHub Pages in Settings → Pages (source: GitHub Actions)
+4. Edit `_config.yml` — at minimum, set `title`, `author`, and `baseurl`
+5. Edit `index.md` to replace the sample homepage content
 
-That's it! Your portfolio is live.
+Your site is live within a minute or two of enabling Pages.
+
+Full walkthrough: [Getting Started Guide](https://xanthan-web.github.io/xanthan/docs/getting-started/)
 
 ## What's Included
 
-This template comes pre-configured with:
-
 ### Sample Content
-- **Homepage** - Introduction and featured work
-- **About page** - Bio and background
-- **CV/Resume** - Academic or professional CV
-- **Project pages** - Sample essays and work examples
-- **Profile sidebar** - Photo, name, and social links
+- **Homepage** — Introduction and featured work
+- **About page** — Bio and background
+- **CV/Resume** — Academic or professional CV
+- **Project pages** — Sample essays and work examples
+- **Profile sidebar** — Photo, name, and social links
 
-### Xanthan Framework
-The template includes the complete Xanthan framework with all its features:
-- Typography components (pull quotes, footnotes, blockquotes)
-- Image components (carousels, juxtapose, jumbotrons)
-- Header images and backgrounds
-- ScrollStory layouts for narrative essays
-- Navigation systems (top nav, cards, sidebar)
-- Customizable color themes
+### Framework Files
 
-**You can use any Xanthan feature** even if it's not in the demo content. All the code is here.
+The template files divide into two categories:
 
-## Editing Your Site
+**Synced from Xanthan** (updated automatically — don't edit these directly):
+- `_includes/` — All components
+- `_layouts/` — Page layouts
+- `assets/css/`, `assets/js/` — Stylesheets and scripts
+- `docs/`, `scrollstories/` — Documentation and examples
 
-### On GitHub (No Installation Required)
-1. Click any `.md` file in your repository
-2. Click the pencil icon to edit
-3. Make changes and commit
-4. Wait 1-2 minutes for your site to rebuild
+**Template-specific** (yours to customize):
+- `_config.yml` — Jekyll settings and site metadata
+- `_data/` — Navigation configuration
+- `*.md` files — Your content pages
+- `assets/images/` — Your images
 
-### Locally (For Advanced Users)
-See the [Previewing Locally](https://xanthan-web.github.io/xanthan/docs/getting-started/previewing-locally) guide to set up Jekyll on your computer.
+All Xanthan components are available even if they're not in the demo content.
 
-## Documentation & Help
+## Documentation
 
-### Documentation in Your Repository
-📚 **Local docs in `/docs/` folder** - Complete documentation matching your code version
+Complete documentation is bundled in the `/docs/` folder (matched to your version of the code) and also online:
 
-Browse documentation directly in your repository:
-- **Getting Started** - Setup and basic usage
-- **Content & Design** - Typography, images, colors, and themes
-- **Navigation** - Menu systems and site organization
-- **ScrollStories** - Narrative scrolling layouts
+- [Getting Started](https://xanthan-web.github.io/xanthan/docs/getting-started/) — Setup and basic usage
+- [Editing](https://xanthan-web.github.io/xanthan/docs/editing/) — Typography, images, colors, themes, navigation
+- [Reference](https://xanthan-web.github.io/xanthan/docs/reference/) — Component library, front matter, troubleshooting
+- [Using AI](https://xanthan-web.github.io/xanthan/docs/using-ai/) — Working with AI assistants to customize your site
 
-**Note:** You can safely delete the `/docs/` folder once you're comfortable with Xanthan. All components will continue to work.
+You can delete `/docs/` once you're comfortable — all components will keep working.
 
-### Online Documentation
-📖 **[Xanthan Documentation Site](https://xanthan-web.github.io/xanthan/docs/)** - Latest documentation and updates
+## Relationship to Xanthan
 
-**Essential Guides:**
-- [Understanding Folders](https://xanthan-web.github.io/xanthan/docs/getting-started/understanding-folders) - Where files go
-- [Editing Your Site](https://xanthan-web.github.io/xanthan/docs/getting-started/editing-in-github) - How to make changes
-- [Typography](https://xanthan-web.github.io/xanthan/docs/content-design/typography) - Text formatting
-- [Images](https://xanthan-web.github.io/xanthan/docs/content-design/images) - Adding and styling images
-- [Colors & Themes](https://xanthan-web.github.io/xanthan/docs/content-design/colors-fonts-themes) - Customizing appearance
+This template is one of three maintained distributions of the [Xanthan](https://github.com/xanthan-web/xanthan) framework:
 
-### Using AI Assistance
-Want help customizing your site? See [Using AI Assistance](https://xanthan-web.github.io/xanthan/docs/content-design/using-ai-assistance) to learn how to work with Claude or ChatGPT.
+| Template | Purpose |
+|---|---|
+| **Portfolio** | Single-author personal or academic site |
+| [Class Project](https://github.com/xanthan-web/class-project-template) | Multi-author collaborative course site |
+| [ScrollStory](https://github.com/xanthan-web/scrollstory-template) | Single immersive scrolling narrative |
 
-### Troubleshooting
-Having issues? Check the [Troubleshooting Guide](https://xanthan-web.github.io/xanthan/docs/content-design/troubleshooting) for common problems and solutions.
-
-## About Xanthan
-
-[Xanthan](https://xanthan-web.github.io/xanthan/) is a free, open-source website framework for digital scholarship, portfolios, and narrative essays. It's built on Jekyll and designed for researchers, students, and writers who want powerful design tools without deep technical knowledge.
-
-**Key Features:**
-- Works entirely in your browser (no software to install)
-- Free hosting on GitHub Pages
-- Beautiful, accessible design out of the box
-- Powerful components for scholarly and creative work
-- AI-friendly for easy customization
-
-## Version Information
-
-This template is regularly updated with the latest Xanthan features.
-
-- **Xanthan Framework**: See `XANTHAN_CHANGELOG.md` for version and changes
-- **Template Content**: Maintained separately from Xanthan core
-
-When you fork this template, you get a snapshot of Xanthan at that moment. To get new Xanthan features later, you can manually copy files from this template repository.
-
-## File Structure
-
-```
-├── _includes/          # Xanthan components (synced from main repo)
-├── _layouts/           # Page layouts (synced from main repo)
-├── assets/
-│   ├── css/           # Stylesheets (synced from main repo, except sidebar.css)
-│   ├── js/            # JavaScript (synced from main repo)
-│   └── images/        # Your images (template-specific)
-├── docs/              # Documentation (synced from main repo)
-│   ├── getting-started/
-│   ├── content-design/
-│   ├── navigation/
-│   └── scrollstories/
-├── scrollstories/     # ScrollStory examples (synced from main repo)
-├── _data/             # Site configuration (template-specific)
-├── _config.yml        # Jekyll settings (template-specific)
-└── *.md files         # Your content pages (template-specific)
-```
-
-**Template-specific** = You customize these
-**Synced from main repo** = Updated automatically from Xanthan
-
-## Need Help?
-
-- 📖 [Full Xanthan Documentation](https://xanthan-web.github.io/xanthan/)
-- 💬 [Report Issues](https://github.com/xanthan-web/portfolio-template/issues)
-- 🤖 Use AI tools (Claude, ChatGPT) for customization help
+Framework updates sync automatically from the main Xanthan repository. `XANTHAN_CHANGELOG.md` tracks what changed with each sync.
 
 ## License
 
-This template and the Xanthan framework are open source and free to use for any purpose.
+Open source and free to use for any purpose.

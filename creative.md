@@ -1,41 +1,38 @@
 ---
-title: Creative
+title: Creative Work
 layout: base
 date: 2025-09-30
 homepage: TRUE
 position: 3
-summary: I create kinetic sculptures that invite steel, wood, and glass to dance with air, vibration, and subtle human presence. Inspired by the mechanics of insect wings, the swings of old clocks, and everyday rituals, my work transforms unnoticed movements into rhythms that reveal the hidden choreography of place. Each piece encourages quiet observation and playful interaction, turning the ordinary into a site of wonder.
+summary: Replace this with a sentence describing this page — what kind of creative work do you make or curate? This appears on the homepage card.
 thumbnail: assets/images/ai-created-kinetic-sculpture.png
 ---
 
-> **✏️ Template Instructions:** This is your **Creative page**. Replace the sample content below with your own creative work—art, design, digital projects, performances, or any creative practice you want to feature. The `summary` and `thumbnail` in the front matter control how this page appears on the homepage card stack. See the [Instructions page](../instructions) for a complete guide.
+This page is a placeholder for a fourth content area — it's called "Creative Work" here, but it's yours to rename and repurpose. Common uses: a portfolio of creative or artistic projects, a public writing page, a digital projects showcase, a section for journalism or multimedia work.
 
-
-## Kinetic Sculptures
-
-{% include images/figure.html
-  class="left"
-  width="60%"
-  caption="AI-generated kinetic sculpture"
-  image-path="/assets/images/ai-created-kinetic-sculpture.png"
-%}
-
-My work begins with wind and ends with rhythm. I am fascinated by the unnoticed movements that govern our lives—the subtle swaying of grass, the imperceptible shift of shadows across a wall, the tidal pulse of breath that carries us from dawn to sleep. My sculptures are collaborations with these invisible forces. By giving steel, wood, and glass a chance to dance with air currents, I am inviting the environment to finish the artwork for me. What I make is not still, and therefore, never fully finished.
-
-I draw inspiration from the mechanics of insect wings, the pendulum swings of old clocks, and the ritual motions of daily human life—stirring tea, hanging laundry, pacing while thinking. I use simple materials, but they are carefully tuned so that the smallest nudge—a breeze, a passerby’s presence, a vibration in the floor—sets them in motion. I want my pieces to remind viewers that movement is a kind of conversation: we touch the world, and the world answers back.
-
-Ultimately, my sculptures are experiments in patience and perception. They reward the slow observer—the one who lingers long enough to notice a sudden spin, a gradual oscillation, a flash of sunlight refracting through a moving panel. Each piece is a kind of clock that doesn’t tell time but instead reveals the hidden choreography of a particular place. If you stand quietly enough, you can feel that choreography in your body, and perhaps find yourself moving in response.
+To rename this page, change the `title` field in the front matter above and update the corresponding entry in `_data/nav-top.yml`.
 
 ---
 
-### Customizing This Page
+## Your Section Title
 
-Replace the content above with your own creative work. Here are some ideas for what to include:
+{% include images/figure.html
+  class="left"
+  width="45%"
+  caption="Add an image that represents this work. Delete this component if you don't need it."
+  image-path="/assets/images/ai-created-kinetic-sculpture.png"
+%}
 
-- **Artist statement** — Your creative philosophy, influences, and goals
-- **Portfolio of work** — Images, descriptions, and links for individual projects or pieces
-- **Exhibitions and performances** — Where and when your work has been shown
-- **Commissions and collaborations** — Projects created with or for others
-- **Process notes** — Behind-the-scenes documentation of how you make things
+Write a paragraph or two introducing what this page is about. This is a good page to experiment with Xanthan's image components — `figure` (standalone, left/right/center) and `figure-wrap` (text wraps around the image) both work well for portfolio-style pages with lots of visual content.
 
-**Tip:** This page doesn't have to be about art—use it for any creative or applied work that doesn't fit neatly into "Research" or "Teaching." Digital projects, public history work, design, film, music, coding—all fair game. You can also rename this page entirely (e.g., rename this file to `projects.md` and update the nav in `_data/nav-top.yml` to match).
+Replace this text with your own. And if this page doesn't fit your portfolio at all, you can delete this file and remove its entry from `_data/nav-top.yml`.
+
+---
+
+## Projects or Works
+
+### Item Title
+Description of this piece, project, or publication. Add an image, a link, a date — whatever context helps a reader understand it.
+
+### Item Title
+Description. Keep the format consistent across entries.

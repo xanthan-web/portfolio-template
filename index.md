@@ -1,35 +1,26 @@
 ---
-title: Portfolio Template
+title: Your Name
 layout: nav-profile
 date: 2024-12-02
 ---
 
 
-# Portfolio Template for Xanthan
+# Your Name
 
-A ready-to-use template for building a personal academic or professional portfolio site. This template is part of [Xanthan](https://xanthan-web.github.io).
-
-This page is the `index.md` file in your repository. You'll eventually replace everything here with your own name, photo, and introduction.
-
-All the instructions for setting up your portfolio are on the **[Instructions page](instructions)**.
-
-
-## Documentation
-- 📖 [Complete Xanthan Docs](docs/) — Your site has all the docs for your template
-- 🎨 [Design & Content](docs/content-design/) — Colors, fonts, images
-- 🏗️ [Navigation](docs/navigation/) — How to organize pages
-
-
-## Questions or Problems?
-- Check the [troubleshooting guide](docs/content-design/troubleshooting)
-- Ask an AI assistant (Claude, ChatGPT) — They're great at helping customize templates
-- [Report an issue](https://github.com/xanthan-web/portfolio-template/issues) on GitHub
+This is your homepage — the first thing visitors see. Write two or three sentences that introduce who you are and what you do. Think of it as a brief professional statement: your field, your focus, and what makes your work distinctive. Keep it short; the cards below link to your other pages where you can go into depth.
 
 ---
 
-## Sample Pages
+The cards below are generated automatically from your other pages. Each page that has `homepage: true` in its front matter will appear here as a card. The card's title, summary text, and thumbnail image all come from that page's front matter:
 
-The cards below link to the sample pages included with this template. Browse them to see what's possible, then customize each one with your own content.
+```yaml
+homepage: TRUE
+summary: A sentence or two describing this page — appears on the card.
+thumbnail: assets/images/your-image.jpg
+position: 1   # controls the order cards appear (lower numbers first)
+```
+
+To add a new card, create a new page and add those fields. To remove a card, delete `homepage: TRUE` from that page's front matter. To reorder cards, adjust the `position` values.
 
 {% assign essays = site.pages | where: "homepage", true %}
 {% include nav/card-stack.html cards = essays %}
