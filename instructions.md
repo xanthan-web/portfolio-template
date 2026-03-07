@@ -5,7 +5,7 @@ layout: base
 
 # Customizing Your Portfolio Template
 
-**Welcome!** This page walks you through personalizing this portfolio template to showcase your work, research, and creative projects. Once you're comfortable editing and have updated the main sections, **you can delete this file**—it's just here to help you get started.
+This page walks you through personalizing this portfolio template to showcase your work, research, and creative projects. Once you're comfortable editing and have updated the main sections, **you can delete this file**—it's just here to help you get started.
 
 ## What You Have
 
@@ -15,7 +15,7 @@ This portfolio template includes:
 - **Teaching page** (`teaching.md`) for courses and pedagogy
 - **Creative page** (`creative.md`) for projects, exhibitions, and creative work
 - **CV page** (`cv.md`) for your full curriculum vitae
-- **Instructions** (`instrcutions.md`) for updating your new site!
+- **Instructions** (`instructions.md`) for updating your new site!
 - **Docs** (`docs folder`) with full Xanthan documentation (since Xanthan itself may have changed a bit)
 
 
@@ -30,6 +30,23 @@ The easiest way to edit your site is using GitHub's built-in editor:
 3. Start editing!
 
 **To save changes:** Press **Ctrl+S** (Windows/Linux) or **Cmd+S** (Mac)
+
+
+## Using AI to Customize Your Site
+
+Xanthan is designed to be legible to AI assistants. Its named CSS variables, documented components, and clear file structure mean you can describe what you want in plain language and get precise, working results.
+
+**Try this as your first AI conversation.** Paste your `_config.yml` and `index.md` into Claude or ChatGPT, then write something like:
+
+> "I'm customizing a portfolio site built on the Xanthan Jekyll framework. Here are my main config file and homepage. I'm a historian who studies labor movements in the American West. Can you help me update the title, bio, and summary to reflect my work and interests?"
+
+From there, you can ask it to:
+- Change colors or fonts ("make the accent color a deep navy blue")
+- Add or reorder navigation items
+- Format your CV or publications list from a Word document
+- Explain what any line of code does
+
+You don't need to know CSS or Liquid templates. Describe what you want; the AI does the technical work.
 
 
 ## 1. Update Your Name and Bio (`index.md`)
@@ -139,7 +156,7 @@ For more control over image display, use Xanthan's built-in includes:
 %}
 ```
 
-See the [Xantha Docs on your site](docs) for all options.
+See the [Xanthan Docs on your site](docs) for all options.
 
 
 ## Update site metadata 
@@ -177,7 +194,7 @@ For custom colors, fonts, and styling, read the [Xanthan Styling Guide](docs/con
 
 ## Using Markdown
 
-Of course you[ll want to use headings, italics, and other basic typography on your site ] Use simple markdown:
+You'll want to use headings, italics, and other basic typography on your site. Use simple markdown:
 
 ```markdown
 # Big Heading
