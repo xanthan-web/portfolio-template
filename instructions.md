@@ -41,9 +41,12 @@ title: Your Name
 author: Your Name
 description: Academic portfolio and digital research
 url: "https://yourusername.github.io"
+baseurl: "portfolio-template"
 ```
 
-These control your browser tab title, site metadata, and how links work. Everything else in the file can stay as-is.
+- `url`: your full GitHub Pages URL (e.g. `https://yourusername.github.io`)
+- `baseurl`: We need to use `portfolio-template` for our demo website, but you probably want to set this as empty (`""`) so that your ULR will be `yourusername.github.io` instead of `yourusername.github.io/portfolio-template`.
+
 
 
 ## Step 3: Update Your Homepage (`index.md`)
