@@ -20,46 +20,22 @@ This template gives you five content pages, a sidebar profile, and Xanthan's ful
 - **Docs** (`docs/`) — full Xanthan documentation bundled with your template
 
 
-## Step 1: Open the Editor
-
-The easiest way to edit your site is GitHub's built-in editor:
-
-1. Go to your repository on GitHub
-2. Press the **`.` (period) key** — VS Code opens in your browser
-3. All your files are in the left sidebar; click any file to edit it
-
-
-## Step 2: Update `_config.yml`
-
-Open `_config.yml` and update basic info fields. This is just a simple configuration file:
-
-```yaml
-title: Your Name
-author: Your Name
-description: Academic portfolio and digital research
-url: "https://yourusername.github.io"
-baseurl: "portfolio-template"
-```
-
-- `url`: your full GitHub Pages URL (e.g. `https://yourusername.github.io`)
-- `baseurl`: We need to use `portfolio-template` for our demo website, but you probably want to set this as empty (`""`) so that your ULR will be `yourusername.github.io` instead of `yourusername.github.io/portfolio-template`.
-
-
-
-## Step 2a: Commit your changes to rebuild your site
-- On the very left of the page is a column of icons; click the one that looks like a network and has a blue circle on it.
-- There's a message box that you can ignore; click the `Don't show again` link.
-- Type in a commit message (for instance, "update config.yml")
-- Click the green `Commit & Push` button
-- Your site is now rebuilding!
-
+Be sure you have completed the setup instructions at [https://xanthan-web.github.io/docs/getting-started/](https://xanthan-web.github.io/docs/getting-started/) for the portfolio template. 
 
 
 ## Step 3: Update Your Homepage (`index.md`)
-
-- Open `index.md` and replace the placeholder name and bio paragraph with your own. 
+- Press the `.` (period) key to go into Editor Mode
+- Close the README file that opens by default
+- From the list of files on the left, click on `index.md` and replace the placeholder name and bio paragraph with your own. 
 - The card links at the bottom are generated automatically — leave that code in place. The image and text in the cards come from the actual pages on your site.
-- Be sure you `Commit & Push` just like in step 2A. 
+
+
+## Step 3a: Commit your changes to rebuild your site
+- On the very left of the page is a column of icons; click the one that looks like a network and has a blue circle on it
+- There's a message box that you can ignore; click the `Don't show again` link.
+- Type in a commit message (for instance, "create new essay folder")
+- Click the green `Commit & Push` button
+- Your site is now rebuilding! 
 
 
 ## Step 4: Set Up Your Sidebar (`_data/nav-profile.yml`)
