@@ -55,7 +55,7 @@ Open each page and replace the placeholder content with your own. Each page has 
 
 - `research.md` — overview of your scholarly work and projects
 - `teaching.md` — teaching philosophy, courses, sample student work
-- `creative.md` — rename and repurpose this page for whatever doesn't fit elsewhere
+- `creative.md` — rename and repurpose this page or just delete it
 - `cv.md` — your full CV; see the note on that page about using AI to convert a Word doc
 
 To remove a page from your site: delete the file and remove its entry from `_data/nav-top.yml`.
@@ -96,17 +96,18 @@ If you want your new page to appear as a card on the homepage, you just need to 
 
 
 ## Working with Images
+Most of the sample pages have an image on them somewhere, so the best approach to adding an image to one of your pages is to copy the code that displays the image an adapt it.
 
 - Upload an image to `assets/images/`
-- To display images (as you can see from the sample pages), we use Xanthan's `figure` component:
+- To display images (as you can see from the sample pages), we use Xanthan's `figure` component. You can copy and paste an example from an existing page or use this generic snippet:
 
-```liquid
+```{{raw}}
 {% include images/figure.html
   class="right"
   width="40%"
   caption="Your caption here"
   image-path="/assets/images/your-image.jpg"
-%}
+%}{{endraw}}
 ```
 
 **Naming convention:** lowercase, hyphens between words (e.g., `field-site-2024.jpg`).
@@ -114,24 +115,17 @@ If you want your new page to appear as a card on the homepage, you just need to 
 
 
 ## Colors, Fonts, and Style
-Xanthan controls all visual design through named CSS variables. You can change the look of your site by editing a handful of lines in `assets/css/base.css` — or just ask an AI to do it:
-
-> "Change my accent color to a deep teal and use a serif font for headings."
-
-See the [Xanthan Styling Guide](docs/editing/colors-and-fonts) for details.
+Custom styling is not hard but is outside the scope of these intro instructions. Please See the [Xanthan Styling Guide](docs/editing/colors-and-fonts) for details.
 
 
 ## Using AI to Customize Your Site
-
 Xanthan is designed to work well with AI assistants. Its named variables, documented components, and clear file structure mean you can describe what you want in plain language and get precise, working results.
 
 **For better results, paste `ai.md` first.** This file (in your repository root) gives the AI context about how Xanthan works — its CSS variable system, component syntax, and file structure. You don't need to understand any of this--it's for the AI tool. Paste it before your question and the AI can make precise, working edits without guessing.
 
 **A good first prompt:** paste `ai.md` and your `index.md` into Claude or ChatGPT and write:
 
-> "I'm customizing a portfolio site built on the Xanthan Jekyll framework. Here are my config and homepage. I'm a historian who studies labor movements in the American West. Help me update the title, bio, and summary to reflect my work."
-
-From there you can ask it to change colors, reformat your CV from a Word document, explain any line of code, or generate new page content. You don't need to know CSS or Liquid templates.
+> "I'm customizing a portfolio site built on the Xanthan Jekyll framework. Here are my config and homepage. I'd like to use an art deco font and color scheme across my pages."
 
 
 ## Getting Help
