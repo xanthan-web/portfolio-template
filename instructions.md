@@ -9,8 +9,8 @@ layout: base
 
 This template gives you five content pages, a sidebar profile, and Xanthan's full component library. Work through the steps below in order — most users are done in under an hour.
 
-## What You Have
 
+## What You Have
 - **Homepage** (`index.md`) — your introduction, with cards linking to other pages
 - **Research** (`research.md`) — scholarly interests, projects, publications
 - **Teaching** (`teaching.md`) — teaching philosophy, courses, student work
@@ -23,14 +23,15 @@ This template gives you five content pages, a sidebar profile, and Xanthan's ful
 Be sure you have completed the setup instructions at [https://xanthan-web.github.io/docs/getting-started/](https://xanthan-web.github.io/docs/getting-started/) for the portfolio template. 
 
 
-## Step 3: Update Your Homepage (`index.md`)
+## Step 1: Update Your Homepage (`index.md`)
+- Make sure you're on your portfolio repository page on GitHub (where the code files are, not your portfolio website itself) 
 - Press the `.` (period) key to go into Editor Mode
 - Close the README file that opens by default
 - From the list of files on the left, click on `index.md` and replace the placeholder name and bio paragraph with your own. 
 - The card links at the bottom are generated automatically — leave that code in place. The image and text in the cards come from the actual pages on your site.
 
 
-## Step 3a: Commit your changes to rebuild your site
+## Step 2: Commit your changes to rebuild your site
 - On the very left of the page is a column of icons; click the one that looks like a network and has a blue circle on it
 - There's a message box that you can ignore; click the `Don't show again` link.
 - Type in a commit message (for instance, "create new essay folder")
@@ -38,7 +39,7 @@ Be sure you have completed the setup instructions at [https://xanthan-web.github
 - Your site is now rebuilding! 
 
 
-## Step 4: Set Up Your Sidebar (`_data/nav-profile.yml`)
+## Step 3: Set Up Your Sidebar
 
 Open `_data/nav-profile.yml` and update:
 - `image_url` — path to your photo (put it in `assets/images/profile/`)
@@ -49,7 +50,7 @@ Open `_data/nav-profile.yml` and update:
 **Don't want a sidebar?** The sidebar only appears on pages using `layout: nav-profile`. Your homepage uses it by default; all other pages use `layout: base` (no sidebar). If you'd prefer a plain full-width homepage too, open `index.md` and change `layout: nav-profile` to `layout: base`.
 
 
-## Step 5: Edit Your Content Pages
+## Step 4: Edit Your Content Pages
 
 Open each page and replace the placeholder content with your own. Each page has inline guidance at the top explaining what to change.
 
@@ -61,7 +62,10 @@ Open each page and replace the placeholder content with your own. Each page has 
 To remove a page from your site: delete the file and remove its entry from `_data/nav-top.yml`.
 
 
-## Step 6: Add New Pages (optional)
+Everything else is optional for for later. You now know how to do basic editing. If you can cut and paste, you can make your site anything you want. A few common next steps are listed below, but can happen anytime.
+
+
+## Add New Pages
 
 To add a page like a standard "About" page:
 
@@ -101,13 +105,13 @@ Most of the sample pages have an image on them somewhere, so the best approach t
 - Upload an image to `assets/images/`
 - To display images (as you can see from the sample pages), we use Xanthan's `figure` component. You can copy and paste an example from an existing page or use this generic snippet:
 
-```{{raw}}
+```{%raw%}
 {% include images/figure.html
   class="right"
   width="40%"
   caption="Your caption here"
   image-path="/assets/images/your-image.jpg"
-%}{{endraw}}
+%}{%endraw%}
 ```
 
 **Naming convention:** lowercase, hyphens between words (e.g., `field-site-2024.jpg`).
@@ -129,7 +133,6 @@ Xanthan is designed to work well with AI assistants. Its named variables, docume
 
 
 ## Getting Help
-
 - **Local docs:** the `docs/` folder in your repository has full Xanthan documentation matched to your version
 - **Troubleshooting:** [Common issues and fixes](https://xanthan-web.github.io/xanthan/docs/reference/troubleshooting/)
 - **ScrollStories:** if you want scroll-driven narrative pages with background images, see `scrollstories/` and the [ScrollStory docs](https://xanthan-web.github.io/xanthan/docs/scrollstories/)

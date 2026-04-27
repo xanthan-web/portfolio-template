@@ -131,7 +131,7 @@ To change the site's color scheme, reassign the semantic variables to new values
 
 ## Components (Liquid Includes)
 
-Used inside `.md` files with `{% include ... %}` syntax. Parameters are named with hyphens.
+Used inside `.md` files with `{% raw %}{% include ... %}{% endraw %}` syntax. Parameters are named with hyphens.
 Review the _includes folder and see the references at https://xanthan-web.github.io/docs/reference/component-library for details.
 ---
 
