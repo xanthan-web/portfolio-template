@@ -1,7 +1,4 @@
-sections:
-  - name: first
-    display: First Category
-  - name: second
-    display: Second Category  
-  - name: piano
-    display: Piano Category
+# nav-sections.yml is used by the nav-sections layout for section-based navigation.
+# This template uses nav-profile and base layouts instead.
+# You can safely ignore this file unless you switch to a sections-based layout.
+sections: []

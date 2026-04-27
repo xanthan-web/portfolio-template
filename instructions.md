@@ -3,149 +3,118 @@ title: Getting Started with Your Portfolio
 layout: base
 ---
 
-# Customizing Your Portfolio Template
+# Getting Started with Your Portfolio
 
-This page walks you through personalizing this portfolio template to showcase your work, research, and creative projects. Once you're comfortable editing and have updated the main sections, **you can delete this file**—it's just here to help you get started.
+> **When you're done setting up your site, delete this file and remove the "Instructions" entry from `_data/nav-top.yml`.** It's only here to help you get started.
+
+This template gives you five content pages, a sidebar profile, and Xanthan's full component library. Work through the steps below in order — most users are done in under an hour.
 
 ## What You Have
 
-This portfolio template includes:
-- **Homepage** (`index.md`) with your name and card links to main sections
-- **Research page** (`research.md`) for academic work and publications
-- **Teaching page** (`teaching.md`) for courses and pedagogy
-- **Creative page** (`creative.md`) for projects, exhibitions, and creative work
-- **CV page** (`cv.md`) for your full curriculum vitae
-- **Instructions** (`instructions.md`) for updating your new site!
-- **Docs** (`docs folder`) with full Xanthan documentation (since Xanthan itself may have changed a bit)
+- **Homepage** (`index.md`) — your introduction, with cards linking to other pages
+- **Research** (`research.md`) — scholarly interests, projects, publications
+- **Teaching** (`teaching.md`) — teaching philosophy, courses, student work
+- **Creative** (`creative.md`) — a flexible fourth page; rename and repurpose as needed
+- **CV** (`cv.md`) — your curriculum vitae in Markdown
+- **Sidebar** (`_data/nav-profile.yml`) — your photo, name, bio, and social links
+- **Docs** (`docs/`) — full Xanthan documentation bundled with your template
 
 
+## Step 1: Open the Editor
 
-## Quick Start: Open the Editor
-The easiest way to edit your site is using GitHub's built-in editor:
+The easiest way to edit your site is GitHub's built-in editor:
 
 1. Go to your repository on GitHub
-2. Press the **`.` (period) key** on your keyboard
-   - VS Code opens in your browser
-   - All your files appear in the left sidebar
-3. Start editing!
+2. Press the **`.` (period) key** — VS Code opens in your browser
+3. All your files are in the left sidebar; click any file to edit it
+4. **Save:** `Ctrl+S` (Windows/Linux) or `Cmd+S` (Mac)
 
-**To save changes:** Press **Ctrl+S** (Windows/Linux) or **Cmd+S** (Mac)
-
-
-## Using AI to Customize Your Site
-
-Xanthan is designed to be legible to AI assistants. Its named CSS variables, documented components, and clear file structure mean you can describe what you want in plain language and get precise, working results.
-
-**Try this as your first AI conversation.** Paste your `_config.yml` and `index.md` into Claude or ChatGPT, then write something like:
-
-> "I'm customizing a portfolio site built on the Xanthan Jekyll framework. Here are my main config file and homepage. I'm a historian who studies labor movements in the American West. Can you help me update the title, bio, and summary to reflect my work and interests?"
-
-From there, you can ask it to:
-- Change colors or fonts ("make the accent color a deep navy blue")
-- Add or reorder navigation items
-- Format your CV or publications list from a Word document
-- Explain what any line of code does
-
-You don't need to know CSS or Liquid templates. Describe what you want; the AI does the technical work.
+You can also clone the repo and edit locally if you prefer.
 
 
-## 1. Update Your Name and Bio (`index.md`)
+## Step 2: Update `_config.yml`
 
-Open `index.md` and change:
-- **Your name** in the title and heading
-- **Your bio paragraph** — describe your work and interests
-- Keep the card stack code at the bottom (it auto-generates links to your pages)
+Open `_config.yml` and fill in the required fields:
 
 ```yaml
----
-title: Your Name Here
-layout: nav-profile
----
-
-# Your Name Here
-
-Write a short intro about yourself and your work...
+title: Your Name
+author: Your Name
+description: Academic portfolio and digital research
+url: "https://yourusername.github.io"
 ```
 
-
-## 2. Edit or delete included pages 
-- `research.md`
-- `teaching.md`
-- `creative.md`
-- `cv.md` (and see the note on that page about using AI to reformat a Word doc for your webpage.)
+These control your browser tab title, site metadata, and how links work. Everything else in the file can stay as-is.
 
 
-## 3. Adding a New Page
+## Step 3: Update Your Homepage (`index.md`)
 
-Want to add a page (like "Blog" or "Projects")? Here's how:
+Open `index.md` and replace the placeholder name and bio paragraph with your own. The card links at the bottom are generated automatically — leave that code in place.
 
-### Step 1: Create the Page File
 
-1. Right-click in the root folder (where `index.md` lives)
-2. Select **"New File"**
-3. Name it something like `blog.md` or `projects.md`
-4. Add front matter at the top:
+## Step 4: Set Up Your Sidebar (`_data/nav-profile.yml`)
+
+Open `_data/nav-profile.yml` and update:
+- `image_url` — path to your photo (put it in `assets/images/profile/`)
+- `name` — your name
+- `description` — one or two sentences about you
+- `links` — your website, email, GitHub, etc.
+
+**Don't want a sidebar?** The sidebar only appears on pages using `layout: nav-profile`. Your homepage uses it by default; all other pages use `layout: base` (no sidebar). If you'd prefer a plain full-width homepage too, open `index.md` and change `layout: nav-profile` to `layout: base`.
+
+
+## Step 5: Edit Your Content Pages
+
+Open each page and replace the placeholder content with your own. Each page has inline guidance at the top explaining what to change.
+
+- `research.md` — overview of your scholarly work and projects
+- `teaching.md` — teaching philosophy, courses, sample student work
+- `creative.md` — rename and repurpose this page for whatever doesn't fit elsewhere
+- `cv.md` — your full CV; see the note on that page about using AI to convert a Word doc
+
+To remove a page from your site: delete the file and remove its entry from `_data/nav-top.yml`.
+
+
+## Step 6: Add New Pages (optional)
+
+To add a page like "Blog" or "Writing":
+
+1. Create a new file in the root folder (e.g., `writing.md`)
+2. Add this front matter at the top:
 
 ```yaml
 ---
-title: Blog
+title: Writing
 layout: base
 homepage: true
 position: 5
-summary: Thoughts and updates from my research journey.
+summary: Essays and public writing.
 thumbnail: assets/images/your-image.jpg
 ---
-
-# Blog
-
-Your content here...
 ```
 
-**Front matter explained:**
-- `homepage: true` — makes it appear on your homepage card stack
-- `position: 5` — controls the order (lower numbers = earlier in the list)
-- `summary` — text shown on the homepage card
-- `thumbnail` — image shown on the homepage card
-
-
-### Step 2: Add to Navigation Bar
-
-To make your new page appear in the top navigation:
-
-1. Open `_data/top-nav.yml`
-2. Add a new entry:
+3. Add it to the nav by opening `_data/nav-top.yml` and adding:
 
 ```yaml
-- title: "Blog"
-  url: /blog
+- title: "Writing"
+  url: /writing
 ```
 
-Save and your new page appears in the nav bar!
+**Front matter fields for the homepage card:**
+- `homepage: true` — makes this page appear in the homepage card stack
+- `position` — order on the homepage (lower numbers appear first)
+- `summary` — text shown on the card
+- `thumbnail` — image shown on the card
 
 
 ## Working with Images
 
-### Adding Images to Your Pages
+Upload images to `assets/images/`, then reference them in your pages:
 
-1. Upload images to `assets/images/` folder:
-   - Right-click on `assets/images/`
-   - Select **"Upload..."**
-   - Choose your image files
+```markdown
+![Description]({{ site.baseurl }}/assets/images/your-image.jpg)
+```
 
-2. Reference images in your markdown files:
-   ```markdown
-   ![Description of image]({{ site.baseurl }}/assets/images/your-image.jpg)
-   ```
-
-**Image naming tips:**
-- Use lowercase only
-- Use hyphens between words (e.g., `field-site-2024.jpg`)
-- Make names descriptive
-
-
-### Using Xanthan's Image Components
-
-For more control over image display, use Xanthan's built-in includes:
+For positioned images with captions, use Xanthan's `figure` component:
 
 ```liquid
 {% include images/figure.html
@@ -156,106 +125,34 @@ For more control over image display, use Xanthan's built-in includes:
 %}
 ```
 
-See the [Xanthan Docs on your site](docs) for all options.
+**Naming convention:** lowercase, hyphens between words (e.g., `field-site-2024.jpg`).
 
 
-## Update site metadata 
+## Colors, Fonts, and Style
 
-Open `_config.yml` to change:
-- **Site title and description**
-- **Your URL** (if you have a custom domain)
-- **Author info**
+Xanthan controls all visual design through named CSS variables. You can change the look of your site by editing a handful of lines in `assets/css/base.css` — or just ask an AI to do it:
 
-Your file should look something like:
+> "Change my accent color to a deep teal and use a serif font for headings."
 
-```yaml
-title: Your Name - Portfolio
-description: Academic portfolio and digital research
-url: "https://yourusername.github.io"
-baseurl: ""
-```
+See the [Xanthan Styling Guide](docs/editing/colors-and-fonts) for details.
 
 
-### Modify Navigation
+## Using AI to Customize Your Site
 
-Navigation is controlled by YAML files in `_data/`:
+Xanthan is designed to work well with AI assistants. Its named variables, documented components, and clear file structure mean you can describe what you want in plain language and get precise, working results.
 
-- **`top-nav.yml`** — Top navigation bar
-- **`sidebar.yml`** — Left sidebar navigation (if using that layout)
-- **`nav-profile.yml`** — Profile sidebar settings
+**A good first prompt:** paste your `_config.yml` and `index.md` into Claude or ChatGPT and write:
 
-Just edit these files to add/remove/reorder menu items.
+> "I'm customizing a portfolio site built on the Xanthan Jekyll framework. Here are my config and homepage. I'm a historian who studies labor movements in the American West. Help me update the title, bio, and summary to reflect my work."
 
-
-### Change Colors and Styles
-
-For custom colors, fonts, and styling, read the [Xanthan Styling Guide](docs/content-design). Again, AI can help you do whatever you need with plain language. 
-
-
-## Using Markdown
-
-You'll want to use headings, italics, and other basic typography on your site. Use simple markdown:
-
-```markdown
-# Big Heading
-
-## Smaller Heading
-
-**Bold text**
-
-*Italic text*
-
-[Link text](https://example.com)
-
-- Bullet point
-- Another point
-
-1. Numbered list
-2. Second item
-```
-
-**See examples** in the existing pages—just copy the formatting you like!
-
-
-### ScrollStories
-
-For visual narrative essays with scrolling effects:
-- Check the `scrollstories/` folder for examples
-- Read the [ScrollStory Documentation](https://xanthan-web.github.io/xanthan/docs/scrollstories/)
-- Create immersive stories with background images and scrolling text
+From there you can ask it to change colors, reformat your CV from a Word document, explain any line of code, or generate new page content. You don't need to know CSS or Liquid templates.
 
 
 ## Getting Help
 
-### Xanthan Documentation
-
-Your template is built on **Xanthan**, which has extensive docs:
-- **Browse local docs**: `/docs/` folder in your repository
-- **Troubleshooting**: [Common issues and fixes](https://xanthan-web.github.io/xanthan/docs/content-design/troubleshooting/)
-
-
-### Use AI Assistance
-
-AI tools like Claude or ChatGPT can help:
-- "How do I add a two-column layout in markdown?"
-- "Can you help me create a publications list?"
-- "How do I change the navigation order?"
-- "What's wrong with this YAML?" (paste your code)
-
-Check out the [Using AI with Xanthan Guide](https://xanthan-web.github.io/xanthan/docs/content-design/using-ai-assistance/) for tips.
+- **Local docs:** the `docs/` folder in your repository has full Xanthan documentation matched to your version
+- **Troubleshooting:** [Common issues and fixes](https://xanthan-web.github.io/xanthan/docs/reference/troubleshooting/)
+- **ScrollStories:** if you want scroll-driven narrative pages with background images, see `scrollstories/` and the [ScrollStory docs](https://xanthan-web.github.io/xanthan/docs/scrollstories/)
+- **Report issues:** [GitHub Issues](https://github.com/xanthan-web/portfolio-template/issues)
 
 
-### Community and Support
-
-- **Report issues**: [GitHub Issues](https://github.com/xanthan-web/portfolio-template/issues)
-- **Xanthan community**: Check the main Xanthan repo for discussions
-
-
-## Clean Up When Ready
-
-Once you've customized your portfolio and feel comfortable editing:
-
-1. **Delete this file** (`instructions.md`)
-   - Right-click in VS Code and select "Delete"
-2. **Remove from navigation** (if you added it to `nav-top.yml`)
-3. Keep updating your portfolio with new work!

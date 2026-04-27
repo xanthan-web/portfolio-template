@@ -7,7 +7,7 @@ A ready-to-use portfolio website built on the [Xanthan](https://xanthan-web.gith
 1. Click **"Use this template"** on GitHub to create your own repository
 2. Name your repository `YOUR-USERNAME.github.io`
 3. Enable GitHub Pages in Settings → Pages (source: GitHub Actions)
-4. Edit `_config.yml` — at minimum, set `title`, `author`, and `baseurl`
+4. Edit `_config.yml` — at minimum, set `title`, `author`, `url`, and `description`
 5. Edit `index.md` to replace the sample homepage content
 
 Your site is live within a minute or two of enabling Pages.
