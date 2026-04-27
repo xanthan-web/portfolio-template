@@ -27,14 +27,11 @@ The easiest way to edit your site is GitHub's built-in editor:
 1. Go to your repository on GitHub
 2. Press the **`.` (period) key** — VS Code opens in your browser
 3. All your files are in the left sidebar; click any file to edit it
-4. **Save:** `Ctrl+S` (Windows/Linux) or `Cmd+S` (Mac)
-
-You can also clone the repo and edit locally if you prefer.
 
 
 ## Step 2: Update `_config.yml`
 
-Open `_config.yml` and fill in the required fields:
+Open `_config.yml` and update basic info fields. This is just a simple configuration file:
 
 ```yaml
 title: Your Name
@@ -49,9 +46,20 @@ baseurl: "portfolio-template"
 
 
 
+## Step 2a: Commit your changes to rebuild your site
+- On the very left of the page is a column of icons; click the one that looks like a network and has a blue circle on it.
+- There's a message box that you can ignore; click the `Don't show again` link.
+- Type in a commit message (for instance, "update config.yml")
+- Click the green `Commit & Push` button
+- Your site is now rebuilding!
+
+
+
 ## Step 3: Update Your Homepage (`index.md`)
 
-Open `index.md` and replace the placeholder name and bio paragraph with your own. The card links at the bottom are generated automatically — leave that code in place.
+- Open `index.md` and replace the placeholder name and bio paragraph with your own. 
+- The card links at the bottom are generated automatically — leave that code in place. The image and text in the cards come from the actual pages on your site.
+- Be sure you `Commit & Push` just like in step 2A. 
 
 
 ## Step 4: Set Up Your Sidebar (`_data/nav-profile.yml`)
@@ -79,9 +87,9 @@ To remove a page from your site: delete the file and remove its entry from `_dat
 
 ## Step 6: Add New Pages (optional)
 
-To add a page like "Blog" or "Writing":
+To add a page like a standard "About" page:
 
-1. Create a new file in the root folder (e.g., `writing.md`)
+1. Create a new file in the root folder (e.g., `about.md`)
 2. Add this front matter at the top:
 
 ```yaml
@@ -90,34 +98,31 @@ title: Writing
 layout: base
 homepage: true
 position: 5
-summary: Essays and public writing.
-thumbnail: assets/images/your-image.jpg
+summary: Interesting facts about me
+thumbnail: assets/images/your-about-page-image.jpg
 ---
 ```
 
-3. Add it to the nav by opening `_data/nav-top.yml` and adding:
+If you don't want your new page to appear as a card on your homepage, change `true` to `false` for the homepage setting.
+
+
+3. Add your new page to the top nav by opening `_data/nav-top.yml` and adding two new lines, following the pattern and spacing in the line:
 
 ```yaml
-- title: "Writing"
-  url: /writing
+- title: "About"
+  url: /about
 ```
 
-**Front matter fields for the homepage card:**
-- `homepage: true` — makes this page appear in the homepage card stack
-- `position` — order on the homepage (lower numbers appear first)
-- `summary` — text shown on the card
-- `thumbnail` — image shown on the card
+Your title (what appears on the nav bar) does not have to be the same as your filename. But the url field has to match your filename exactly, NOT including the extension (so put `/about` not `/about/md`).
+
+If you want your new page to appear as a card on the homepage, you just need to add a little metadata to youe
+
 
 
 ## Working with Images
 
-Upload images to `assets/images/`, then reference them in your pages:
-
-```markdown
-![Description]({{ site.baseurl }}/assets/images/your-image.jpg)
-```
-
-For positioned images with captions, use Xanthan's `figure` component:
+- Upload an image to `assets/images/`
+- To display images (as you can see from the sample pages), we use Xanthan's `figure` component:
 
 ```liquid
 {% include images/figure.html
@@ -131,8 +136,8 @@ For positioned images with captions, use Xanthan's `figure` component:
 **Naming convention:** lowercase, hyphens between words (e.g., `field-site-2024.jpg`).
 
 
-## Colors, Fonts, and Style
 
+## Colors, Fonts, and Style
 Xanthan controls all visual design through named CSS variables. You can change the look of your site by editing a handful of lines in `assets/css/base.css` — or just ask an AI to do it:
 
 > "Change my accent color to a deep teal and use a serif font for headings."
@@ -144,7 +149,9 @@ See the [Xanthan Styling Guide](docs/editing/colors-and-fonts) for details.
 
 Xanthan is designed to work well with AI assistants. Its named variables, documented components, and clear file structure mean you can describe what you want in plain language and get precise, working results.
 
-**A good first prompt:** paste your `_config.yml` and `index.md` into Claude or ChatGPT and write:
+**For better results, paste `ai.md` first.** This file (in your repository root) gives the AI context about how Xanthan works — its CSS variable system, component syntax, and file structure. You don't need to understand any of this--it's for the AI tool. Paste it before your question and the AI can make precise, working edits without guessing.
+
+**A good first prompt:** paste `ai.md` and your `index.md` into Claude or ChatGPT and write:
 
 > "I'm customizing a portfolio site built on the Xanthan Jekyll framework. Here are my config and homepage. I'm a historian who studies labor movements in the American West. Help me update the title, bio, and summary to reflect my work."
 
