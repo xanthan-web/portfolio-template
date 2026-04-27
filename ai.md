@@ -132,54 +132,7 @@ To change the site's color scheme, reassign the semantic variables to new values
 ## Components (Liquid Includes)
 
 Used inside `.md` files with `{% include ... %}` syntax. Parameters are named with hyphens.
-
-### Figure — image with caption
-
-```liquid
-{% include images/figure.html
-  class="right"
-  width="40%"
-  image-path="assets/images/photo.jpg"
-  caption="Caption text. **Markdown** supported."
-  alt-text="Description for screen readers"
-%}
-```
-
-`class` controls float: `left`, `right`, or `center`.
-
-### Figure Wrap — image alongside a text block
-
-```liquid
-{% include images/figure-wrap.html
-  image-path="assets/images/photo.jpg"
-  image-position="right"
-  image-width="45%"
-  caption="Optional caption."
-  text="Text that appears alongside the image. **Markdown** supported."
-%}
-```
-
-### Jumbotron — full-width image banner with optional overlay text
-
-```liquid
-{% include images/jumbotron.html
-  image-path="assets/images/banner.jpg"
-  height="50vh"
-  title="Optional heading"
-  text="Optional body text. Markdown supported."
-  box-align="left"
-%}
-```
-
-### Carousel — image slideshow
-
-```liquid
-{% include images/carousel.html
-  images="img1.jpg|img2.jpg|img3.jpg"
-  captions="Caption 1|Caption 2|Caption 3"
-%}
-```
-
+Review the _includes folder and see the references at https://xanthan-web.github.io/docs/reference/component-library for details.
 ---
 
 ## Layouts
