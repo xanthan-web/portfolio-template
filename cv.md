@@ -14,7 +14,7 @@ Email: you@university.edu • [Your Website](http://yoursite.com) • [LinkedIn]
 
 Replace this paragraph with a brief professional statement if you want one at the top of your CV — or delete it and start directly with your headings below.
 
-> **WORK FASTER:** You can us an AI assistant to get your CV here in no time. Paste your existing CV into an AI assistant and ask it to reformat to Markdown following the format of your CV page---and give it the URL of your CV page. It handles the tedious formatting work in seconds.
+> **WORK FASTER:** You can use an AI assistant to get your CV here in no time. Paste your existing CV into an AI assistant and ask it to reformat to Markdown following the format of your CV page---and give it the URL of your CV page. It handles the tedious formatting work in seconds.
 
 
 ---
