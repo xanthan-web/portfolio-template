@@ -17,8 +17,7 @@ Full walkthrough: [Getting Started Guide](https://xanthan-web.github.io/xanthan/
 ## What's Included
 
 ### Sample Content
-- **Homepage** — Introduction and featured work
-- **About page** — Bio and background
+- **Homepage** — Introduction, bio, featured work
 - **CV/Resume** — Academic or professional CV
 - **Project pages** — Sample essays and work examples
 - **Profile sidebar** — Photo, name, and social links
