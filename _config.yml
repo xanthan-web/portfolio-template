@@ -4,9 +4,9 @@
 title: Your Name              # appears in browser tab and header
 author: Your Name             # your name (used in meta tags)
 description: A short description of your portfolio site.
-url: "https://xanthan-web.github.io"   # your full site URL (no trailing slash)
-baseurl: "/portfolio-template"        # leave empty for username.github.io repos
-                              # use /repo-name if publishing as a project page
+baseurl: "/portfolio-template"  # your repository name, with a leading slash.
+                                # Leave empty if the repo is USERNAME.github.io.
+                                # You do not need a url line — GitHub supplies it.
 
 # ----------------------------------------------------------------------------
 # OPTIONAL
