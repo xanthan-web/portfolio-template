@@ -23,4 +23,4 @@ position: 1   # controls the order cards appear (lower numbers first)
 To add a new card, create a new page and add those fields. To remove a card, delete `homepage: TRUE` from that page's front matter. To reorder cards, adjust the `position` values.
 
 {% assign essays = site.pages | where: "homepage", true %}
-{% include nav/card-stack.html cards = essays %}
+{% include cards/card-stack.html cards = essays %}
