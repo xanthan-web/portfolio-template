@@ -2,11 +2,15 @@
 title: Background Scroll Boxes
 layout: default
 date: 2024-10-24
+summary: Text boxes over a fixed background image, either revealed as the reader scrolls to it or held behind a whole run of text.
 ---
 
 {% include nav/scrollspy-toc.html %}
 
 # Background Scroll Boxes
+
+{: .lede}
+Background scroll boxes hold text over a fixed background image, so the picture stays put while the words move across it. This page covers both versions: an image revealed as the reader scrolls down to meet it, and one that stays behind a whole run of text.
 
 ## Revealed images
 Fixed images move along with scrolling, but sometimes it's fun to have a background image be revealed as the reader scrolls down the page.
@@ -21,7 +25,7 @@ Keep scrolling! Once the whole image is visible, the regular story will continue
 {%
 include scrollybox/bg.html
 height="100vh"
-image-path="/assets/images/backgrounds/image_3.jpg"
+image-path="/assets/images/backgrounds/lake-1.jpg"
 %}
 {%endraw%}
 ```
@@ -29,7 +33,7 @@ image-path="/assets/images/backgrounds/image_3.jpg"
 {% 
 include scrollybox/bg.html
 height="100vh"
-image-path="/assets/images/backgrounds/image_3.jpg"
+image-path="/assets/images/backgrounds/lake-1.jpg"
 %}
 
 #### Now we're back to the story
@@ -142,4 +146,4 @@ That's all for scrollybox basics.
 
 We can also do [background switching](bg-switch) and [side scrolling](side-scroll).
 
-Other feature are listed in the `Page components` nav menu.
+Other ScrollStory components are listed in the [ScrollStories documentation](./).

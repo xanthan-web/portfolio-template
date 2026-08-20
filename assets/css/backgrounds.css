@@ -1,5 +1,15 @@
 /*****************************************************
-BACKGROUNDs
+BACKGROUNDS
+
+Backgrounds for the scrollybox components — the scroll-driven images that sit
+behind or beside a passage of text.
+
+Loads:    every page
+Used by:  the scrollybox/ includes (bg.html, bg-sticky.html, bg-ss.html,
+          bg-multi-long.html, and their siblings)
+Needs:    base.css tokens
+Not here: the typography those boxes inherit on a scrollstory page
+          (scrollstory.css)
 *****************************************************/
 
 .bg-image {
@@ -158,6 +168,14 @@ SIDE SCROLL
 *****************************************************/
 
 .side-scroll-container {
+  /* Display */
+  /* flow-root makes this box contain its floated images. Without it the
+     container's height counts only the text column, the sticky images hang
+     past the bottom — by 746px on the forest essay — and whatever follows the
+     section rides up alongside them. A carousel placed after the side-scroll
+     was overlapping the last image for exactly this reason. */
+  display: flow-root;
+
   /* Box Model */
   width: 100%;
   max-width: 1200px;

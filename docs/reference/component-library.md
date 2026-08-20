@@ -12,16 +12,15 @@ Every component in Xanthan, with its parameters and copy-paste code. Drop any of
 
 ---
 
-## Inline Image
+## Standalone Image
 
 **File:** `images/figure.html`
 
-Places an image in your content with caption and alt-text. Text wraps around `left` and `right` images.
+Places a single centered image in your content, with caption and alt-text. The image sits on its own; whatever follows starts below it. To set an image beside a passage of text, use **Image + Text** (`figure-wrap.html`) below.
 
 ```
 {% raw %}{% include images/figure.html
-  class="right"
-  width="40%"
+  image-width="60%"
   caption="A descriptive caption"
   alt-text="Description for screen readers"
   image-path="/assets/images/photo.jpg"
@@ -31,12 +30,37 @@ Places an image in your content with caption and alt-text. Text wraps around `le
 | Parameter | Required | Default | Options / Notes |
 |-----------|----------|---------|-----------------|
 | `image-path` | yes | --- | Relative or absolute path to image |
-| `class` | no | --- | `left`, `center`, `right` |
-| `width` | no | `40%` | Any CSS width value |
+| `image-width` | no | `40%` | Any CSS width value |
 | `caption` | no | --- | Supports Markdown |
 | `alt-text` | no | uses caption | Accessibility text for screen readers |
 
-**Side-by-side:** Use two `figure.html` includes with `class="left"` and `width="48%"`, then add `<p style="clear:both"></p>` after both.
+---
+
+## Image + Text (figure-wrap)
+
+**File:** `images/figure-wrap.html`
+
+Places an image beside a passage of text as a two-column pair. Nothing floats, so the text stays in its own column and never wraps under the image. This is the recommended way to put an image alongside text. On narrow screens the columns stack, image on top.
+
+```
+{% raw %}{% include images/figure-wrap.html
+  image-path="/assets/images/photo.jpg"
+  image-position="right"
+  image-width="45%"
+  caption="A descriptive caption"
+  alt-text="Description for screen readers"
+  text="The text that sits beside the image. Supports **Markdown**."
+%}{% endraw %}
+```
+
+| Parameter | Required | Default | Options / Notes |
+|-----------|----------|---------|-----------------|
+| `image-path` | yes | --- | Relative or absolute path to image |
+| `text` | yes | --- | Text beside the image; supports Markdown |
+| `image-position` | no | `left` | `left` or `right` — which side the image is on |
+| `image-width` | no | `40%` | CSS width of the image column |
+| `caption` | no | --- | Caption below the image; supports Markdown |
+| `alt-text` | no | uses caption | Accessibility text for screen readers |
 
 ---
 
@@ -64,12 +88,51 @@ Full-browser-width image that breaks out of the page content margins. Use it as 
 | `box-align` | no | `left` | `left`, `right`, or `center` — positions text and sets gradient direction |
 | `title` | no | --- | Heading above the text |
 | `text` | no | --- | Body text; supports Markdown. Gradient applied automatically when present |
-| `fade-start` | no | `0%` | Where the opaque background begins |
-| `fade-end` | no | `60%` | Where the fade becomes transparent |
-| `bg-color` | no | `var(--bg-page)` | Color of the opaque side |
+| `fade-start` | no | `35%` | How far the solid colour extends before it starts fading. At `0%` there is no solid region and the text sits on a wash |
+| `fade-end` | no | `85%` | Where the fade becomes transparent. Lower it to show more photograph, but keep it past the text or the words end up on bare image |
+| `overlay` | no | `panel` | `panel` or `image` — see below |
+| `bg-color` | no | by mode | Colour the gradient fades from |
+| `text-color` | no | by mode | Colour of the title and body text |
 | `background-position` | no | `center` | CSS `background-position`; aim the photo subject away from the text side |
 | `zoom` | no | `cover` | CSS `background-size`; e.g. `150%` to zoom in |
 | `caption` | no | --- | Caption below the image; supports Markdown |
+| `text-shadow` | no | `true` | Set to `false` when text sits on a solid/opaque area rather than busy image detail |
+
+**`overlay` picks which of the two the jumbotron is:**
+
+| `overlay` | What you see | Default `bg-color` | Default `text-color` |
+|-----------|--------------|--------------------|----------------------|
+| `panel` (default) | The text sits on a band of solid colour that fades sideways to reveal the photograph | `var(--bg-page)` | `var(--text-body)` |
+| `image` | The photograph runs the full width and the text sits on it, over a sheer dark scrim | `var(--bg-scrim-sheer)` | `var(--text-on-photo)` |
+
+Panel mode reads as part of the page; image mode reads as a picture you happen
+to be reading on. Use panel when the words matter more than the photograph, and
+image when the photograph is doing the work.
+
+```
+{% raw %}{% include images/jumbotron.html
+  image-path="/assets/images/backgrounds/pano-1.jpg"
+  overlay="image"
+  box-align="right"
+  title="Text over the photograph"
+  text="The picture runs the full width; a sheer scrim keeps the words readable."
+%}{% endraw %}
+```
+
+**Set `text-color` whenever you change `bg-color`.** The two are not linked: a
+dark `bg-color` with the default dark text is the one way to make this component
+unreadable, and it is the mistake worth guarding against.
+
+```
+{% raw %}{% include images/jumbotron.html
+  image-path="/assets/images/backgrounds/pano-1.jpg"
+  box-align="right"
+  bg-color="var(--bg-feature-band)"
+  text-color="var(--text-on-dark)"
+  title="A dark panel"
+  text="Dark band, light text — both stated, because neither implies the other."
+%}{% endraw %}
+```
 
 **`box-align` controls both text placement and gradient direction:**
 
@@ -93,6 +156,8 @@ Draggable slider for comparing two images. Uses the [Juxtapose](https://juxtapos
 {% raw %}{% include images/juxtapose.html
   image1="/assets/images/before.jpg"
   image2="/assets/images/after.jpg"
+  alt-text-left="Description of the before image"
+  alt-text-right="Description of the after image"
   caption="Before and after renovation."
   starting-position="50%"
 %}{% endraw %}
@@ -104,6 +169,8 @@ Draggable slider for comparing two images. Uses the [Juxtapose](https://juxtapos
 | `image2` | yes | --- | Right image path |
 | `caption` | no | --- | Caption below slider |
 | `starting-position` | no | `50%` | Initial slider position |
+| `alt-text-left` | no | uses caption | Accessibility description for left image |
+| `alt-text-right` | no | uses caption | Accessibility description for right image |
 
 ---
 
@@ -130,12 +197,19 @@ Caption for second image|
 " | split: '|'
 %}
 
+{% assign alt_texts =
+"Description of first image|
+Description of second image|
+Description of third image" | split: '|'
+%}
+
 {% include images/carousel.html
   width="80%"
   class="center"
   images=images
   headers=headers
   captions=captions
+  alt-texts=alt_texts
 %}{% endraw %}
 ```
 
@@ -144,8 +218,9 @@ Caption for second image|
 | `images` | yes | --- | Pre-assigned list of image paths (comma-separated) |
 | `headers` | no | --- | Slide titles (comma-separated; use empty values to skip) |
 | `captions` | no | --- | Slide captions (pipe-separated to allow commas in text) |
+| `alt-texts` | no | uses caption or header | Image descriptions (pipe-separated) |
 | `width` | no | `100%` | CSS width |
-| `class` | no | --- | `left`, `center`, `right` |
+| `class` | no | `center` | `left`, `center`, `right` |
 | `id` | no | `carouselExample` | Unique ID (required for multiple carousels on one page) |
 
 ---
@@ -166,7 +241,7 @@ Colored callout box for tips, warnings, or important information.
 
 | Parameter | Required | Default | Notes |
 |-----------|----------|---------|-------|
-| `class` | yes | --- | `info` (blue), `warning` (yellow), `danger` (red), `success` (green) |
+| `class` | no | `info` | `info` (blue), `warning` (yellow), `danger` (red), `success` (green) |
 | `text` | yes | --- | Alert content; supports Markdown |
 | `title` | no | --- | Bold heading at top of alert |
 
@@ -187,30 +262,9 @@ A centered callout that highlights a key passage from your text. Good for drawin
 | Parameter | Required | Default | Notes |
 |-----------|----------|---------|-------|
 | `text` | yes | --- | Quote content; supports Markdown |
-| `box-align` | no | `right` | `left`, `right`, or `center` — where the box sits; body text wraps around left/right |
-| `width` | no | `40%` | CSS width |
+| `width` | no | `70%` | CSS width override |
 
----
-
-## Blockquote
-
-**File:** `typography/blockquote.html`
-
-Extended quotations set apart from the body text. For simple centered blockquotes, you can use Markdown's `>` syntax directly. Use this include when you want to control alignment.
-
-```
-{% raw %}{% include typography/blockquote.html
-  box-align="left"
-  text="Here is a significant quotation worth setting apart from the body text."
-%}{% endraw %}
-```
-
-| Parameter | Required | Default | Notes |
-|-----------|----------|---------|-------|
-| `text` | yes | --- | Quote content; supports Markdown |
-| `box-align` | no | `center` | `left`, `right`, or `center` |
-
-**Plain Markdown alternative:** `> Your quote here` produces a centered blockquote without an include.
+For quoted source material, use Markdown blockquotes with `>` and style the resulting `blockquote` element in `assets/css/typography.css`.
 
 ---
 
@@ -218,7 +272,7 @@ Extended quotations set apart from the body text. For simple centered blockquote
 
 **File:** `media/audio.html`
 
-HTML5 audio player. See [Media](../editing/media) for details on hosting audio files.
+HTML5 audio player. See [Images & Media](images#embedding-media) for details on hosting audio files.
 
 ```
 {% raw %}{% include media/audio.html
@@ -236,26 +290,36 @@ HTML5 audio player. See [Media](../editing/media) for details on hosting audio f
 
 **File:** `nav/scrollspy-toc.html`
 
-Floating sidebar that auto-generates a table of contents from all `h2` headings on the page. Highlights the current section as the reader scrolls.
+Sticky sidebar that auto-generates a table of contents from the headings on the page. Highlights the current section as the reader scrolls.
 
 ```
 {% raw %}{% include nav/scrollspy-toc.html %}{% endraw %}
 ```
 
-No parameters. Place near the top of your page content (after front matter). On mobile, it collapses to a static block above the content.
+| Parameter | Default | Description |
+|---|---|---|
+| `headings` | `h2` | CSS selector for the headings to track. |
+
+By default it tracks `h2` headings. If your sections are `h3`—as on an FAQ page, where each question is a smaller heading—pass the selector explicitly:
+
+```
+{% raw %}{% include nav/scrollspy-toc.html headings="h3" %}{% endraw %}
+```
+
+Place near the top of your page content (after front matter). On screens under 1100px it collapses to a horizontal list above the content; at wider sizes it moves into a sidebar column and the page's text column narrows to make room. If the page has no matching headings, the component removes itself so no empty sidebar is reserved.
 
 ---
 
 ## Card: Table of Contents
 
-**File:** `nav/card-toc.html`
+**File:** `cards/card-toc.html`
 
 Renders a list of compact, text-focused cards from a set of pages.
 
 ```
 {% raw %}{% assign card_pages = site.pages | where_exp: "page", "page.path contains 'essays/'" %}
 
-{% include nav/card-toc.html rows = card_pages %}{% endraw %}
+{% include cards/card-toc.html rows = card_pages %}{% endraw %}
 ```
 
 | Parameter | Required | Notes |
@@ -268,14 +332,14 @@ Pages should have `title`, `author`, and `summary` in their front matter for bes
 
 ## Card: Compact List
 
-**File:** `nav/card-toc-compact.html`
+**File:** `cards/card-toc-compact.html`
 
 Smaller, text-only cards stacked vertically---more compact than `card-toc.html` and better suited for long lists or documentation indexes. Shows title, summary, and an optional `topics` list as sub-bullets.
 
 ```
 {% raw %}{% assign card_pages = site.pages | where_exp: "page", "page.path contains 'docs/'" %}
 
-{% include nav/card-toc-compact.html rows = card_pages %}{% endraw %}
+{% include cards/card-toc-compact.html rows = card_pages %}{% endraw %}
 ```
 
 | Parameter | Required | Notes |
@@ -288,14 +352,58 @@ Pages should have `title` and `summary` in their front matter. Add `position: 1`
 
 ## Card: Stacked
 
-**File:** `nav/card-stack.html`
+**File:** `cards/card-stack.html`
 
 Wide horizontal cards with larger images, stacked vertically.
 
 ```
 {% raw %}{% assign stacked_cards = site.pages | where_exp: "page", "page.path contains 'essays/'" %}
 
-{% include nav/card-stack.html cards = stacked_cards %}{% endraw %}
+{% include cards/card-stack.html cards = stacked_cards %}{% endraw %}
+```
+
+| Parameter | Required | Notes |
+|-----------|----------|-------|
+| `cards` | yes | A Liquid-assigned collection of pages |
+| `card-class` | no | Additional CSS class added to each card |
+
+
+Cards sort by `position` front matter if present. Pages without `position` appear last.
+
+### Showing who made it
+
+Two optional front-matter fields on the page (or keys on the card object) let a
+card carry attribution --- the thing a collaborative site needs most:
+
+| Field | Renders as | Example |
+|-------|-----------|---------|
+| `kicker` | small uppercase line above the title | `kicker: Casa Fresco Farm` |
+| `byline` | italic line under the title | `byline: Seth Matteucci` |
+
+```
+{% raw %}---
+title: Chess across the Silk Road
+byline: Seth Matteucci
+summary: Traces of the game's history across old trade routes.
+---{% endraw %}
+```
+
+Both are optional and collapse to nothing when unset, so existing cards are
+unaffected. Use `kicker` for the group a piece belongs to (a farm, a course, a
+theme) and `byline` for the people who made it.
+
+---
+
+## Card: Grid
+
+**File:** `cards/card-grid.html`
+
+Traditional card grid layout with balanced text and images.
+
+```
+{% raw %}{% assign stories = site.pages | where_exp: "page", "page.path contains 'essays/'" %}
+
+{% include cards/card-grid.html cards = stories %}{% endraw %}
 ```
 
 | Parameter | Required | Notes |
@@ -306,23 +414,45 @@ Cards sort by `position` front matter if present. Pages without `position` appea
 
 ---
 
-## Card: Grid
 
-**File:** `nav/card-grid.html`
+## Gallery Grid
 
-Traditional card grid layout with balanced text and images.
+**File:** `nav/gallery-grid.html`
+
+Image-first navigation for collections. Use it when readers are choosing among pages by looking first: project galleries, visual archives, place collections, or exhibit-style indexes. Titles stay visible over the image; summaries reveal on hover or keyboard focus when `show-summary=true`.
 
 ```
-{% raw %}{% assign stories = site.pages | where_exp: "page", "page.path contains 'essays/'" %}
+{% raw %}{% assign gallery_pages = site.pages | where_exp: "page", "page.path contains 'projects/'" %}
 
-{% include nav/card-grid.html cards = stories %}{% endraw %}
+{% include nav/gallery-grid.html
+  items = gallery_pages
+  variant = "mosaic"
+  show-summary = false
+%}{% endraw %}
 ```
 
-| Parameter | Required | Notes |
-|-----------|----------|-------|
-| `cards` | yes | A Liquid-assigned collection of pages |
+| Parameter | Required | Default | Notes |
+|-----------|----------|---------|-------|
+| `items` | yes | --- | A Liquid-assigned collection of pages or data objects |
+| `variant` | no | `mosaic` | `mosaic` gives varied tile sizes; `uniform` keeps all tiles equal |
+| `min-width` | no | `180px` | Minimum tile width before the grid wraps |
+| `gap` | no | `var(--spacing-xs)` | Space between tiles |
+| `image-field` | no | `thumbnail` | Front matter field to use for images |
+| `show-title` | no | `true` | Show titles over images |
+| `show-summary` | no | `false` | Show summaries over images |
+| `class` | no | --- | Additional CSS class on the gallery wrapper |
 
-Cards sort by `position` front matter if present. Pages without `position` appear last.
+Items should have `title`, `thumbnail`, and either `url` or `link`. If an item does not have an image, Xanthan renders a visible warning so the missing field is easy to find.
+
+Pass `heading` and `intro` rather than writing them above the include: the
+grid is wider than the text column, so a heading written in the page body
+would sit on a different left edge and the two would read as unrelated.
+
+| Parameter | Notes |
+|-----------|-------|
+| `heading` | Section heading, aligned to the grid's left edge |
+| `intro` | Paragraph under the heading; Markdown supported |
+| `heading-level` | 2--6, level for each tile title (default 3) |
 
 ---
 
@@ -393,6 +523,82 @@ A horizontal row with text and a button link. Useful for landing pages or featur
 
 ---
 
+## Section Band
+
+**Files:** `layout/section.html` and `layout/section-end.html`
+
+A full-width tinted or dark band behind a run of content, used to break a long
+page into visually distinct stretches.
+
+Page content normally sits inside a centred column. A band has to span the
+whole window, which means stepping outside that column and back in again --- so
+this comes as a pair. Put your content between them and write ordinary Markdown
+in the middle.
+
+```
+{% raw %}{% include layout/section.html style="cool" %}
+
+## Who this is for
+
+Ordinary Markdown goes here---headings, paragraphs, images, other includes.
+
+{% include layout/section-end.html %}{% endraw %}
+```
+
+| Parameter | Required | Default | Notes |
+|-----------|----------|---------|-------|
+| `style` | no | `alt` | `alt`, `cool`, or `warm` |
+
+- **`alt`** --- a subtle tint. The everyday band.
+- **`cool`** --- a second tint, for when two bands would otherwise sit close
+  enough to read as the same interruption twice.
+- **`warm`** --- a dark band with light text, for a deliberate change of voice.
+
+**Always close what you open.** A band without its `section-end` will run to
+the bottom of the page.
+
+---
+
+## Feature Grid
+
+**File:** `layout/feature-grid.html`
+
+A set of short titled points set side by side instead of stacked. Use it for the
+"here's what this gives you" passages that otherwise become a long column of
+small headings and paragraphs. It collapses to a single column on phones.
+
+The points live in your page's front matter, so the page body stays short:
+
+```
+{% raw %}---
+title: About This Project
+principles:
+  - title: "Open"
+    text: "Your site is made of files you control and can move elsewhere."
+  - title: "Transparent"
+    text: "The structure is visible: content, navigation, and design."
+  - title: "Accessible"
+    text: "Start with Markdown, then learn the vocabulary of the web."
+  - title: "Collaborative"
+    text: "Projects can grow through many contributors."
+---{% endraw %}
+```
+
+Then place it wherever you want the grid to appear:
+
+```
+{% raw %}{% include layout/feature-grid.html features=page.principles %}{% endraw %}
+```
+
+| Parameter | Required | Default | Notes |
+|-----------|----------|---------|-------|
+| `features` | yes | --- | Array of `title` / `text` pairs, usually `page.<name>` |
+| `columns` | no | `2` | `2` or `3` columns on wide screens |
+
+`text` accepts Markdown, so links and emphasis work inside a point.
+
+---
+
 ## Page Header (via front matter)
 
 **File:** `layout/page-header.html`
@@ -442,6 +648,244 @@ header-position: center right
 | `header-opacity` | tier default | Override image opacity (0–1) |
 | `header-zoom` | `cover` | CSS background-size; e.g. `150%` to zoom in |
 | `header-height` | tier default | CSS height override; e.g. `60vh` |
+---
+
+## Landing Page Sections
+
+The five components below are for a homepage that has to introduce a whole
+project rather than open a single argument. Each one is a full-width band that
+takes its content from front matter, so the page body ends up as a short list of
+includes and everything editable sits at the top of the file.
+
+They are designed to be stacked. A common order is hero, split intro, feature
+block, picks, link index --- but nothing requires all five, and a homepage built
+from two of them is a perfectly good homepage.
+
+Every band spans the window and re-centres its own contents. To make them all
+wider or narrower at once, override one variable in your site's CSS:
+
+```css
+:root { --home-measure: 76rem; }
+```
+
+---
+
+## Home Hero
+
+**File:** `layout/home-hero.html`
+
+A full-bleed opening image with a headline and, if you want them, buttons.
+
+This is the sibling of **Page Header**, and which one you want depends on where
+the opening sits. A page header comes from front matter and is drawn above your
+content by the layout. A home hero is a component you place in the page body,
+so other sections can follow it directly --- and unlike the page header, it can
+carry buttons.
+
+```yaml
+{% raw %}---
+title: The Silk Road
+hero:
+  image: /assets/images/gate.jpg
+  alt: The tiled Ata Darvaza gate in Khiva, Uzbekistan
+  kicker: A digital exhibition of movement, material, and myth
+  title: The Silk Road Was Stranger Than Silk
+  text: Games, cosmetics, glass, and religion moved along the same routes.
+  buttons:
+    - label: Read the Essays
+      url: /essays/
+    - label: Browse Objects
+      url: /objects/
+---{% endraw %}
+```
+
+```
+{% raw %}{% include layout/home-hero.html hero=page.hero %}{% endraw %}
+```
+
+| Parameter | Required | Default | Notes |
+|-----------|----------|---------|-------|
+| `hero` | yes | --- | The front matter block, usually `page.hero` |
+| `align` | no | `left` | `left` or `center` |
+
+Inside `hero`: `image` (required), `alt`, `kicker`, `title`, `text`, and
+`buttons` (a list of `label` / `url` pairs).
+
+The dark scrim that keeps the headline readable is drawn by the stylesheet, not
+baked into your image, so you can drop in any photo without editing it first.
+
+---
+
+## Split Intro
+
+**File:** `layout/split-intro.html`
+
+One large claim on the left, the explanation on the right. For an opening
+argument where a single sentence carries the point and a paragraph or two does
+the qualifying.
+
+```yaml
+{% raw %}---
+opening_argument:
+  kicker: Opening Argument
+  title: The Silk Road was not a single road, and it was not only about silk.
+  text:
+    - The name evokes caravans crossing the breadth of the known world.
+    - The history is stranger, and this site follows those threads.
+---{% endraw %}
+```
+
+```
+{% raw %}{% include layout/split-intro.html intro=page.opening_argument %}{% endraw %}
+```
+
+| Parameter | Required | Default | Notes |
+|-----------|----------|---------|-------|
+| `intro` | yes | --- | The front matter block, usually `page.<name>` |
+
+Inside `intro`: `title` (required), `kicker`, and `text`. Write `text` as a list
+of paragraphs or as a single string; either works, and both accept Markdown.
+
+---
+
+## Feature Block
+
+**File:** `layout/feature-block.html`
+
+One item given the full width: a large image on one side, its title, summary,
+byline, and a link on the other. For the single thing you most want a visitor to
+read.
+
+You name the item by its slug --- the folder or file name --- and the component
+reads the rest off that page, so the block stays current when the page is
+edited.
+
+```
+{% raw %}{% include layout/feature-block.html
+    collection="essays"
+    slug="chess"
+    label="Featured Essay"
+    cta="Follow the game" %}{% endraw %}
+```
+
+| Parameter | Required | Default | Notes |
+|-----------|----------|---------|-------|
+| `collection` | yes | --- | Folder the item lives in, e.g. `essays` |
+| `slug` | yes | --- | The item's folder or file name |
+| `label` | no | `Featured` | Small caps kicker above the title |
+| `cta` | no | `Read more` | Text on the link at the bottom |
+| `image` | no | the page's `thumbnail` | Override the image |
+| `flip` | no | `false` | `true` puts the image on the right |
+
+Read from the item's own front matter: `title`, `summary`, `thumbnail`, and
+`author`.
+
+---
+
+## Picks
+
+**File:** `layout/picks.html`
+
+A chosen handful of pages from a collection, shown image-first.
+
+Card grids and gallery grids show everything in a folder, in whatever order the
+folder gives. Picks shows the few items you name, in the order you name them ---
+which is what lets a homepage make an editorial selection instead of a directory
+listing.
+
+```yaml
+{% raw %}---
+reading_paths:
+  - slug: chess
+    title: "Games & Play"
+    text: Chess, polo, and sport as evidence of cultural movement.
+  - slug: greco-buddhist-art
+    title: "Faith & Transformation"
+    text: Images and beliefs crossing languages and regions.
+---{% endraw %}
+```
+
+```
+{% raw %}{% include layout/picks.html
+    items=page.reading_paths
+    collection="essays"
+    variant="tiles"
+    kicker="Reading Paths"
+    title="Choose a thread and follow it across cultures." %}{% endraw %}
+```
+
+| Parameter | Required | Default | Notes |
+|-----------|----------|---------|-------|
+| `items` | yes | --- | List of items, each with a `slug` |
+| `collection` | yes | --- | Folder the items live in |
+| `variant` | no | `tiles` | `strip`, `tiles`, or `feature` |
+| `title` | no | --- | Heading above the block |
+| `kicker` | no | --- | Small caps label above the heading |
+| `columns` | no | by variant | Tiles across on wide screens |
+
+The three variants:
+
+- **`strip`** --- a row of upright thumbnails with the caption underneath. For
+  objects, people, or anything where the picture is the identifier. Five across
+  by default.
+- **`tiles`** --- equal tiles on a dark band, caption laid over the image. For
+  themes or routes into the site, where the text does real work. Four across.
+- **`feature`** --- like tiles, but the first item gets double height, for an
+  editor's-picks block with a clear lead. Two across.
+
+Each item takes `slug` plus any of `label`, `title`, `text`, `image`, and `alt`.
+Anything you leave out comes from the item's own page: `title` from its title,
+`text` from its summary, `image` from its thumbnail, `label` from its
+`category` if it has one.
+
+One deliberate exception: in the `strip` variant, `text` appears only if you
+write one. A row of small upright thumbnails has no room for a paragraph under
+each, so summaries are not pulled in there automatically.
+
+**Where items are looked up.** Three shapes are tried in order, so this works
+whether or not your site uses Jekyll collections: a declared collection matched
+on slug, then `<collection>/<slug>/index.md`, then `<collection>/<slug>.md`. If
+none match, the page shows a warning box naming what it looked for.
+
+---
+
+## Link Index
+
+**File:** `layout/link-index.html`
+
+A titled block of labelled links, one per row --- the "where to go from here"
+section at the foot of a landing page. Each row gives a destination a name and a
+sentence, which a plain list of links cannot do.
+
+```yaml
+{% raw %}---
+explore_links:
+  - label: Thematic Essays
+    url: /essays/
+    text: Read the full set of thematic studies.
+  - label: Eurasian Map
+    url: /map/
+    text: See where the stories sit across Eurasia.
+---{% endraw %}
+```
+
+```
+{% raw %}{% include layout/link-index.html
+    links=page.explore_links
+    kicker="Explore More"
+    title="The collection keeps opening outward." %}{% endraw %}
+```
+
+| Parameter | Required | Default | Notes |
+|-----------|----------|---------|-------|
+| `links` | yes | --- | List of `label` / `url` / `text` entries |
+| `title` | yes | --- | Heading for the block |
+| `kicker` | no | --- | Small caps label above the heading |
+
+Use it for a handful of major destinations. It is not a substitute for site
+navigation.
+
+
 
 ---
 

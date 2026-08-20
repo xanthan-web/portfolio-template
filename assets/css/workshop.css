@@ -1,11 +1,21 @@
 /*****************************************************
-WORKSHOP MODE — Live presentation bullet highlighting
+WORKSHOP MODE
 
-This file is always loaded (see _includes/html/html-head.html).
-Workshop mode is toggled via the nav checkbox in nav-top.html.
+Live presentation bullet highlighting: when active, list items are revealed one
+at a time using keyboard controls.
 
-When active, list items can be highlighted one at a time
-using keyboard controls. See assets/js/workshop.js.
+Internal — for instructors and grad students presenting, not documented for
+site authors.
+
+Loads:    every page
+Used by:  the inline script in html/html-js.html
+
+Note: as of this writing nothing can switch workshop mode on. The script is
+gated on `page.url contains '/guides/'` or `page.workshop_mode`, and there is
+no guides/ directory (the docs moved to /docs/) and no page sets the flag.
+Set `workshop_mode: true` in a page's front matter to use it.
+Needs:    base.css tokens (--overlay-dark, --text-on-photo, --font-mono)
+Not here: the nav checkbox markup itself (nav/nav-top.html)
 *****************************************************/
 
 @media screen {
@@ -53,7 +63,7 @@ ul li.highlighted::marker {
   /* Typography */
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--white);
+  color: var(--text-on-photo);
 
   /* Visual */
   background: var(--overlay-dark);

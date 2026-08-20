@@ -1,5 +1,14 @@
 /*****************************************************
 NAVIGATION
+
+The top navigation bar and breadcrumbs, including the dropdown behaviour and
+the variant that goes transparent over a hero page header.
+
+Loads:    every page
+Used by:  nav/nav-top.html, nav/breadcrumbs.html
+Needs:    base.css tokens (--bg-nav, --text-on-photo, --spacing-*)
+Not here: the two sidebar navigations (nav-left.css, nav-profile.css) and the
+          search overlay the nav opens (search.css)
 *****************************************************/
 
 @media screen {
@@ -10,7 +19,7 @@ TOPNAV
 
 .top-nav {
   /* Box Model */
-  padding: 0.1rem var(--spacing-sm);
+  padding: 0.6rem var(--spacing-sm);
 
   /* Typography */
   font-family: var(--font-body);
@@ -40,12 +49,12 @@ TOPNAV
 .page-wrap:has(.page-header--hero) .top-nav-brand,
 .page-wrap:has(.page-header--hero) .top-nav-link,
 .page-wrap:has(.page-header--hero) .top-nav-toggler {
-  color: var(--white);
+  color: var(--text-on-photo);
 }
 
 .page-wrap:has(.page-header--hero) .top-nav-link:hover {
-  color: var(--white);
-  box-shadow: inset 0 -3px 0 var(--white);
+  color: var(--text-on-photo);
+  box-shadow: inset 0 -3px 0 var(--text-on-photo);
   border-radius: 0;
 }
 
@@ -187,7 +196,7 @@ TOPNAV
 .top-nav-link {
   /* Box Model */
   display: inline-block;
-  padding: 0.2rem 0.6rem;
+  padding: 0.35rem 0.6rem;
 
   /* Typography */
   color: var(--text-on-dark);
@@ -210,17 +219,20 @@ ul .top-nav-dropdown {
   /* Visibility — hidden by default, shown via JS .show class */
   display: none;
 
-  /* Positioning */
+  /* Positioning — explicit top avoids relying on flex static-position,
+     which was causing the dropdown to overlap the nav bar */
   position: absolute;
+  top: calc(100% + 0.35rem);
   z-index: 100;
   min-width: 12rem;
 
   /* Box Model */
-  padding: 0.25rem 0;
+  padding: 0.4rem 0;
   list-style: none;
 
-  /* Visual */
-  background-color: var(--bg-nav);
+  /* Visual — more opaque than .top-nav since this floats over varied
+     page content rather than the consistent strip behind the sticky bar */
+  background-color: color-mix(in srgb, var(--bg-nav) 97%, transparent);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-md);
@@ -248,11 +260,11 @@ ul .top-nav-dropdown.show {
   display: block;
 
   /* Box Model */
-  padding: 0.25rem 0.75rem;
+  padding: 0.42rem 0.9rem;
 
   /* Typography */
   font-size: 0.85rem;
-  line-height: 1.3;
+  line-height: 1.35;
   color: var(--text-on-dark);
   text-decoration: none;
 
@@ -277,17 +289,35 @@ ul .top-nav-dropdown.show {
 
 .top-nav-dropdown-divider {
   /* Box Model */
-  margin: 0.1rem 0;
+  margin: 0.35rem 0.75rem;
 
   /* Visual */
   border: none;
-  border-top: 1px solid var(--text-on-dark);
-  opacity: 0.3;
+  border-top: 1px solid var(--border-on-dark);
+  opacity: 0.55;
 }
 
 .top-nav-link.top-nav-dropdown-toggle[aria-expanded="true"] {
   color: var(--text-on-dark);
   background-color: transparent;
+}
+
+/* Chevron — signals the link opens a menu; flips to point up when expanded */
+.top-nav-dropdown-toggle::after {
+  content: "";
+  display: inline-block;
+  width: 0.35em;
+  height: 0.35em;
+  margin-left: 0.4em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--transition-fast);
+  vertical-align: middle;
+}
+
+.top-nav-dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(-135deg) translateY(2px);
 }
 
 /* Position parent li relative for dropdown absolute positioning */
@@ -299,8 +329,6 @@ ul .top-nav-dropdown.show {
 /*****************************************************
 SIDENAV - See nav-left.css and nav-profile.css for sidebar styling
 *****************************************************/
-
-
 
 
 /*****************************************************
@@ -331,29 +359,31 @@ BREADCRUMB NAVIGATION
 }
 
 
-.top-nav-workshop-toggle {
+} /* end media screen */
+
+/*****************************************************
+REPOSITORY LINK (top nav)
+*****************************************************/
+/* Sits beside the search button and matches its weight. Rendered only when
+   `repository` is set in _config.yml. */
+.repo-link {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  padding: 0 1rem;
-}
-
-.top-nav-workshop-toggle input[type="checkbox"] {
-  cursor: pointer;
-}
-
-.top-nav-workshop-toggle label {
-  cursor: pointer;
-  margin-left: 0.5rem;
-  font-size: 0.9rem;
+  padding: 0.3rem 0.5rem;
   color: var(--text-on-dark);
+  border-bottom: 0;
+  transition: color var(--transition-fast);
 }
 
-@media (max-width: 768px) {
-  .top-nav-workshop-toggle {
-    padding: 0.5rem 1rem;
-    border-top: 1px solid var(--border-light);
-  }
+.repo-link:hover,
+.repo-link:focus {
+  color: var(--interactive-hover);
+  border-bottom: 0;
+  outline: none;
 }
 
-} /* end media screen */
+.repo-link svg {
+  width: 1.15em;
+  height: 1.15em;
+  fill: currentColor;
+}

@@ -2,12 +2,14 @@
 title: Building with AI
 layout: default
 date: 2026-02-16
+summary: Real prompts for AI assistants in VS Code, organised by what you are trying to accomplish rather than by the technology involved.
 ---
-
-# Building with AI
 
 {% include nav/scrollspy-toc.html %}
 
+# Building with AI
+
+{: .lede}
 These are real prompts you can use with AI assistants in VS Code. They're organized by what you're trying to accomplish, not by which technology they involve. Each one takes advantage of Xanthan's design system---the AI knows how the framework is structured and will make changes that fit.
 
 For all of these, you should be working locally with VS Code and an AI assistant. If you haven't set that up, start with the [setup instructions](./).
@@ -46,6 +48,8 @@ AI can create entire new pages for your site, complete with front matter, conten
 
 > *"Set up a new essay page at essays/water-rights.md with a header image, a right-aligned figure after the introduction, and a before/after image slider halfway through. Use placeholder images for now---I'll swap them later."*
 
+> *"Create a StoryMaps-style ScrollStory page at essays/river-crossings.md. Give it four sections with background images, short scrolling text panels, and quieter Markdown paragraphs between the visual sections. Use placeholder image paths and tell me where to replace them."*
+
 > *"Build a resources page with three sections: Books, Articles, and Websites. Each section should have items as a simple list with titles linked to external URLs and one-line descriptions."*
 
 ### Why these work
@@ -76,7 +80,7 @@ Every Xanthan component has a documented include path and parameter list. When y
 
 ## Building ScrollStory sections
 
-ScrollStories---narratives where images and text interact as you scroll---are among the most impressive things you can build with Xanthan. They're also the most technically involved, which makes AI assistance especially valuable.
+ScrollStories are Xanthan's StoryMaps-style pages: narratives where images, maps, media, and text interact as you scroll. They can live inside any Xanthan template. They're also among the most technically involved pages you can build, which makes AI assistance especially valuable.
 
 > *"Add a scrolling section to my essay where a background image of the desert stays fixed while three text blocks scroll over it. Each text block should have a semi-transparent background. Use the bg-sticky scrollybox include."*
 
@@ -88,7 +92,7 @@ ScrollStories---narratives where images and text interact as you scroll---are am
 
 ### Why these work
 
-ScrollStory components have complex syntax---multiple nested includes, specific parameter combinations, careful ordering. This is exactly the kind of work where AI earns its keep. Describe the *experience* you want the reader to have, and the AI assembles the correct include tags and parameters. The [ScrollStories documentation](../scrollstories/) has examples at three complexity levels if you want to see what's possible before asking.
+ScrollStory components have complex syntax---multiple nested includes, specific parameter combinations, careful ordering. This is exactly the kind of work where AI earns its keep. Describe the *experience* you want the reader to have, and the AI assembles the correct include tags and parameters. The [ScrollStories documentation](../scrollstories/) shows the main patterns and examples you can copy before asking for something more custom.
 
 ---
 
@@ -125,6 +129,68 @@ Sometimes the most useful thing AI can do is explain what's already there.
 ### Why these work
 
 AI assistants can read your entire project and explain it in context. This is different from searching documentation---the AI sees *your specific files* and can point to exact lines, explain relationships between files, and connect what you see in the browser to what's in the code.
+
+---
+
+## Building something you saw in the gallery
+
+The sites in the [gallery](../getting-started/gallery) are real projects, and
+several were extended past what Xanthan ships. The gap is usually smaller than
+it looks: the underlying structure is standard, and the distance from a starter
+site to something like these is mostly arranging components you already have.
+
+Point your assistant at the site and say what you want from it. It can read a
+public page.
+
+**An essay index with authors,** as on the [Silk Road](https://amaranth.unm.edu/silk-road/essays) essays page:
+
+> *"Make an index page listing every essay in my essays folder, each with its
+> image, title, author, and summary, using the card-stack component. Put the
+> author in the byline field."*
+
+**Records with an affiliation line,** as in the [Rio Grande farmer profiles](https://amaranth.unm.edu/farming-oral-histories/farmer-profiles):
+
+> *"Build a profiles directory where each person's card shows their farm above
+> their name and a short summary below it. Use kicker for the farm."*
+
+**A mapped directory,** as on the [Santa Fe Trail](https://historic-trails.unm.edu/) site:
+
+> *"Add geo coordinates to each of my location pages and put a map on the index
+> that links every pin to its page."*
+
+**An object grid,** as in the [Silk Road material objects](https://amaranth.unm.edu/silk-road/) collection:
+
+> *"Give me a page per object with an image, date, medium and tags, and an
+> image-first grid on the index that links to them."*
+
+Ask what it used, then look at the files. That is how the gallery stops being
+other people's work and starts being a parts list.
+
+### Homepages
+
+The front pages in the gallery tend to look like the biggest jump, because a
+homepage that introduces a whole project does not look like any single page in
+a starter site. It is the same move as the examples above, though: the
+[landing page sections](../reference/component-library#landing-page-sections)
+are components, and the copy lives in your front matter.
+
+**A magazine-style front page,** as on the [Silk Road](https://amaranth.unm.edu/silk-road/):
+
+> *"Build my homepage from the landing page sections: a home hero over
+> assets/images/gate.jpg with two buttons, a split intro for my opening
+> argument, a feature block for my strongest essay, and a picks block with the
+> four essays I want people to start with. Put all the copy in front matter."*
+
+**A calmer front page,** as on the [Farming Oral Histories](https://amaranth.unm.edu/farming-oral-histories/) site:
+
+> *"Give my homepage a header image with a title and subtitle, a short centred
+> lede under it, a row of three images linking to my main sections, and a
+> four-panel grid describing what the project holds."*
+
+That second one needs no new components at all --- it is `header-image` in
+front matter, then `gallery-grid` for the three image links and `feature-grid`
+for the four panels. Worth knowing before you ask for something to be built:
+often the answer is that it already exists under a different name.
 
 ---
 

@@ -85,8 +85,42 @@ Mixing left and right placement keeps readers' eyes moving, which prevents the p
 
 Not every image needs text beside it. The **standalone figure** sits within the text flow with its own caption. Here's one centered in the page:
 
-{% include images/figure.html class="center" width="80%" caption="Close up of a seeding in beautiful soil, centered, at 80% width." image-path="images/daniel-dan--FMxvHTCRmw-unsplash.jpg" %}
+{% include images/figure.html image-width="80%" caption="Close up of a seeding in beautiful soil, centered, at 80% width." image-path="images/daniel-dan--FMxvHTCRmw-unsplash.jpg" %}
 
+
+
+## Several Images at Once
+
+When you have more than one picture of the same thing, a **carousel** shows them
+in one place instead of stacking them down the page. Readers move through the
+slides themselves, so three photographs take up the room of one.
+
+Carousels need their lists defined before the include, because a list is
+something Markdown cannot express inside a parameter. Define them with `split`,
+then hand them over by name:
+
+{% assign growth_images = "images/oskari-manninen-RnDXZXcfgGI-unsplash.jpg,
+images/qinghill-x8MZ2MoEKLE-unsplash.jpg,
+images/pao-dayag-08-AAUx-WtM-unsplash.jpg" | split: ',' %}
+
+{% assign growth_captions = "A young rowan catching a shaft of light on the forest floor. Photo by Oskari Manninen on Unsplash.|
+A seedling just clear of the soil. Photo by qinghill on Unsplash.|
+A garden path winding through lush greenery. Photo by Pao Dayag on Unsplash." | split: '|' %}
+
+{% assign growth_alts = "A slender young rowan lit by sunlight in dark woodland,
+A small green seedling emerging from dark soil,
+A narrow path between dense green planting" | split: ',' %}
+
+{% include images/carousel.html
+  images=growth_images
+  captions=growth_captions
+  alt-texts=growth_alts
+  width="85%"
+%}
+
+Captions are split on `|` rather than a comma, so a caption can contain commas
+of its own — which most real captions do, once you start crediting
+photographers.
 
 
 ## Section Headings Create Visual Breaks
@@ -156,6 +190,7 @@ If you can create this Seedling essay, you can:
 - Use pull quotes for emphasis
 - Format block quotes for extended quotations
 - Add alert boxes for tips and warnings
+- Show several images in one place with a carousel
 
 **That's enough to create compelling digital scholarship.** The Sapling and Forest essays use addtional Xanthan components, but this foundation works for many projects, especially when just getting used to designing an essay.
 

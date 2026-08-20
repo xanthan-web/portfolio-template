@@ -1,69 +1,18 @@
 ---
 layout: default
-title: Choose a Template
+title: Choose a Starter Site
 date: 2026-02-14
+summary: "Four starter sites, one per shape of project: a portfolio, a collection of writing, a collection of objects, or a single continuous narrative."
 ---
-
-<style>
-.template-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-md);
-}
-
-.template-btn-row {
-  display: flex;
-  gap: var(--spacing-xs);
-}
-
-.template-btn {
-  padding: var(--spacing-xs) var(--spacing-md);
-  font-size: 0.9rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--sage-pale);
-  background: rgba(178, 205, 188, 0.3);
-  color: var(--sage-deep);
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  flex: 1;
-}
-
-.template-btn:hover {
-  background: rgba(245, 158, 11, 0.25);
-  border-color: var(--interactive-hover);
-  color: var(--sage-deep);
-}
-
-.template-btn.primary {
-  background: var(--accent-primary);
-  color: var(--white);
-  border-color: var(--accent-primary);
-  width: 100%;
-  flex: none;
-  font-weight: 600;
-}
-
-.template-btn.primary:hover {
-  background: var(--interactive-hover);
-  border-color: var(--interactive-hover);
-}
-
-.template-btn.placeholder {
-  opacity: 0.4;
-  cursor: default;
-  pointer-events: none;
-}
-</style>
 
 {% include nav/scrollspy-toc.html %}
 
-# Choose a Template
+# Choose a Starter Site
 
-Xanthan offers four starting points, each designed for a different kind of project. Pick the one closest to what you're building---you can always add features later.
+{: .lede}
+Xanthan offers four starter sites, each a different shape of project: one person's work, a collection of writing, a collection of objects, or a single continuous narrative. Pick the closest one---you can always add features later.
 
-Browse the options below. See a live example, explore the clean starting template, then click "Use this template" on GitHub to make it your own.
+Browse the options below. See a live example, explore the clean starter site, then start with the one closest to your project. GitHub calls the final step "Use this template," which is the green button you will click there.
 
 ---
 
@@ -75,9 +24,9 @@ A personal or professional site for presenting your work, interests, and credent
 <div class="template-buttons">
   <div class="template-btn-row">
     <a class="template-btn" href="https://xanthan-web.github.io/alexandra-ruiz/" target="_blank">Live example</a>
-    <a class="template-btn" href="https://xanthan-web.github.io/portfolio-template" target="_blank">View template</a>
+    <a class="template-btn" href="https://xanthan-web.github.io/portfolio-template" target="_blank">View starter site</a>
   </div>
-  <a class="template-btn primary" href="./?template=portfolio">Use this template →</a>
+  <a class="template-btn primary" href="./?template=portfolio">Start with this one →</a>
 </div>
 {% endcapture %}
 
@@ -85,23 +34,23 @@ A personal or professional site for presenting your work, interests, and credent
   image-path="/assets/images/gallery/portfolio-screenshot.png"
   image-position="right"
   image-width="45%"
-  alt-text="Portfolio template screenshot"
+  alt-text="Portfolio starter site screenshot"
   text=portfolio_text
 %}
 
 ---
 
-## Class Project
+## Essay Collection
 
 {% capture class_project_text %}
-This template shows how you might organize many individual scrollstories or pages of any kind that belong together as a collection. Card-based directory pages organize contributions automatically, so the site grows as people add to it. The instructor sets up the structure; students follow clear directions to fill it in.
+A site that gathers writing by many people around a shared theme: student essays, oral histories, reflections, a workshop archive. Card-based directory pages organize contributions automatically, so the site grows as people add to it. One person sets up the structure and contributors fill it in, which makes this the usual choice for course sites. Because the pages are plain text files, students can learn from each other's work and the project remains editable long after the contributors have moved on.
 
 <div class="template-buttons">
   <div class="template-btn-row">
     <a class="template-btn" href="https://amaranth.unm.edu/campus-history/" target="_blank">Live example</a>
-    <a class="template-btn" href="https://xanthan-web.github.io/class-project-template" target="_blank">View template</a>
+    <a class="template-btn" href="https://xanthan-web.github.io/class-project-template" target="_blank">View starter site</a>
   </div>
-  <a class="template-btn primary" href="./?template=class-project">Use this template →</a>
+  <a class="template-btn primary" href="./?template=class-project">Start with this one →</a>
 </div>
 {% endcapture %}
 
@@ -109,23 +58,51 @@ This template shows how you might organize many individual scrollstories or page
   image-path="/assets/images/gallery/class-project-screenshot.png"
   image-position="right"
   image-width="45%"
-  alt-text="Class Project template screenshot"
+  alt-text="Essay Collection starter site screenshot"
   text=class_project_text
 %}
 
 ---
 
-## ScrollStory
+## Object Collection
 
-{% capture scrollstory_text %}
-Sometimes a whole website is overkill, and what you really want to make is a single immersive narrative. The scrollstory template gives you a main scrollstory page (of course you can always add more), where background images shift as you scroll, text panels slide in from the side, and the reading experience becomes part of the argument. If you've used ESRI StoryMaps this will seem very familiar, but it's driven with simple text files that are super quick to edit.
+{% capture object_collection_text %}
+The same collaborative shape, but built around things rather than prose: artefacts, sites, specimens, images, places. Each object gets its own folder and page carrying what you actually catalogue---an image, a date, a medium, coordinates, tags---and an image-first grid assembles the directory. Add `geo` coordinates and the objects appear on a map as well as in the grid.
+
+Choose this over Essay Collection when the object *is* the entry and the writing supports it. A digital exhibit, a material-culture course, a site survey, a collection catalogue.
 
 <div class="template-buttons">
   <div class="template-btn-row">
-    <a class="template-btn" href="https://amaranth.unm.edu" target="_blank">Live example</a>
-    <a class="template-btn" href="https://xanthan-web.github.io/scrollstory-template" target="_blank">View template</a>
+    <a class="template-btn" href="https://amaranth.unm.edu/silk-road/" target="_blank">Live example</a>
+    <a class="template-btn" href="https://xanthan-web.github.io/object-collection-template" target="_blank">View starter site</a>
   </div>
-  <a class="template-btn primary" href="./?template=scrollstory">Use this template →</a>
+  <a class="template-btn primary" href="./?template=object-collection">Start with this one →</a>
+</div>
+{% endcapture %}
+
+{% include images/figure-wrap.html
+  image-path="/assets/images/gallery/silk-road.jpg"
+  image-position="right"
+  image-width="45%"
+  alt-text="Object Collection starter site screenshot"
+  text=object_collection_text
+%}
+
+---
+
+## Single Story
+
+{% capture scrollstory_text %}
+If you've used StoryMaps, the shape will feel familiar: text, images, maps, and media unfolding as the reader scrolls. This starter site puts that form at the center: the whole site is one narrative, ready to edit and extend.
+
+Every Xanthan site can publish ScrollStories---it is a feature, not a format you have to commit to. Choose this starting point only when the narrative *is* the site, rather than one page inside a portfolio or a collection. The work still happens in plain text files, so you can revise by hand or ask AI to help build sections without giving up editorial control.
+
+<div class="template-buttons">
+  <div class="template-btn-row">
+    <a class="template-btn" href="https://amaranth.unm.edu/studio/name-origins/" target="_blank">Live example</a>
+    <a class="template-btn" href="https://xanthan-web.github.io/scrollstory-template" target="_blank">View starter site</a>
+  </div>
+  <a class="template-btn primary" href="./?template=scrollstory">Start with this one →</a>
 </div>
 {% endcapture %}
 
@@ -133,7 +110,7 @@ Sometimes a whole website is overkill, and what you really want to make is a sin
   image-path="/assets/images/gallery/forest-scroll.gif"
   image-position="right"
   image-width="45%"
-  alt-text="ScrollStory template example"
+  alt-text="Single Story starter site example"
   text=scrollstory_text
 %}
 
@@ -142,4 +119,4 @@ Sometimes a whole website is overkill, and what you really want to make is a sin
 
 ## Not sure?
 
-**Don't worry!** The difference between the templates is usually a few files. All the component functionality comes with each template. You can easily add or delete files from whatever template you start with. That flexibility is the whole point of Xanthan!
+The difference between them is usually a few files and some starting examples. Every one ships the full set of components, including ScrollStories. Pick the closest shape, then add or remove pages as your project clarifies.

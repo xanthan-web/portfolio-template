@@ -2,36 +2,28 @@
 layout: default
 title: Add an Image
 date: 2026-02-14
+summary: "Upload an image and put it on a page, using the one Xanthan workflow you will reuse everywhere: find something that works, copy it, adapt it."
 ---
 
 {% include nav/scrollspy-toc.html %}
 
 # Add an Image
 
+{: .lede}
 You've edited text. Now let's add an image to your site---the full process from uploading the file to seeing it on a page.
 
-Before we start, one core Xanthan workflow: **find something that already works, copy it, then adapt it**.
-
-You don't need to write include code from scratch. In practice, the fastest and safest way to add a new thing is:
-
-1. Find an existing example that looks close to what you want
-2. Copy and paste that block
-3. Change only the values you need (file path, caption, width, alt text)
-
-We'll do exactly that here.
+Before we start, keep in mind that we're really just doing one core Xanthan workflow: **find something that already works, copy it, then adapt it**.
 
 ---
 
 ## Start with a working example
 
-Open [Images guide](../editing/images) in one tab and your page file in another.
-
 Find a `figure.html` example in the guide, copy it, and paste it into your page. Then edit just these values:
 
-- `image-path="assets/images/..."`
+- `image-path="/assets/images/..."`
 - `caption="..."`
 - `alt-text="..."`
-- optional `width="..."`
+- optional `image-width="..."`
 
 This copy/adapt pattern is how most Xanthan edits should work, especially when you're new.
 
@@ -57,9 +49,8 @@ Your image is now in your repository at `assets/images/your-image.jpg`.
 
 ```
 {%raw%}{% include images/figure.html
-  image-path="assets/images/your-image.jpg"
-  class="center"
-  width="60%"
+  image-path="/assets/images/your-image.jpg"
+  image-width="60%"
   caption="A brief description of what's shown."
   alt-text="Describe the image for screen readers"
 %}{%endraw%}
@@ -81,9 +72,14 @@ Wait 1--2 minutes for GitHub Pages to rebuild, then refresh your site. Your imag
 
 The `figure.html` include has a few options you can adjust:
 
-- **`class`** --- `left`, `right`, or `center` (controls positioning)
-- **`width`** --- any percentage like `40%`, `80%`, `100%`
+- **`image-width`** --- any percentage like `40%`, `80%`, `100%`
 - **`caption`** --- text that appears below the image
 - **`alt-text`** --- description for accessibility (always include this)
 
-For the full range of image options---side-by-side layouts, carousels, full-width jumbotrons, and more---see the [Images guide](../editing/images).
+`figure.html` always centers the image. To place an image *beside* text instead, use `figure-wrap.html`. For the full range of image options---side-by-side layouts, carousels, full-width jumbotrons, and more---see the [Images guide](../reference/images).
+
+---
+
+## Next step
+
+**[Customizing Your Site](customizing)** --- your site still looks like the starter. Here is how to make it yours.
