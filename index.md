@@ -1,13 +1,14 @@
 ---
 title: Your Name
-layout: nav-profile
+layout: base
 date: 2024-12-02
 ---
 
-
-# Your Name
+{% include layout/profile-intro.html %}
 
 This is your homepage — the first thing visitors see. Write two or three sentences that introduce who you are and what you do. Think of it as a brief professional statement: your field, your focus, and what makes your work distinctive. Keep it short; the cards below link to your other pages where you can go into depth.
+
+Your name, photo, bio, and links come from `_data/nav-profile.yml`, not from this file. Edit them there and this block updates.
 
 ---
 

@@ -7,7 +7,7 @@ layout: base
 
 > **When you're done setting up your site, delete this file and remove the "Instructions" entry from `_data/nav-top.yml`.** It's only here to help you get started.
 
-This template gives you five content pages, a sidebar profile, and Xanthan's full component library. Work through the steps below in order — most users are done in under an hour.
+This template gives you five content pages, a profile block for the homepage, and Xanthan's full component library. Work through the steps below in order — most users are done in under an hour.
 
 
 ## What You Have
@@ -16,7 +16,7 @@ This template gives you five content pages, a sidebar profile, and Xanthan's ful
 - **Teaching** (`teaching.md`) — teaching philosophy, courses, student work
 - **Creative** (`creative.md`) — a flexible fourth page; rename and repurpose as needed
 - **CV** (`cv.md`) — your curriculum vitae in Markdown
-- **Sidebar** (`_data/nav-profile.yml`) — your photo, name, bio, and social links
+- **Profile** (`_data/nav-profile.yml`) — your photo, name, bio, and social links
 - **Docs** (`docs/`) — full Xanthan documentation bundled with your template
 
 
@@ -39,15 +39,20 @@ Be sure you have completed the setup instructions at [https://xanthan-web.github
 - Your site is now rebuilding! 
 
 
-## Step 3: Set Up Your Sidebar
+## Step 3: Set Up Your Profile
 
-Open `_data/nav-profile.yml` and update:
+Your name, photo, bio, and links sit at the top of the homepage, in the block above your intro paragraph. They do not live in `index.md`. Open `_data/nav-profile.yml` and update:
 - `image_url` — path to your photo (put it in `assets/images/profile/`)
 - `name` — your name
+- `role` — your title, department, or what you do. Delete the line if you'd rather not say.
 - `description` — one or two sentences about you
 - `links` — your website, email, GitHub, etc.
 
-**Don't want a sidebar?** The sidebar only appears on pages using `layout: nav-profile`. Your homepage uses it by default; all other pages use `layout: base` (no sidebar). If you'd prefer a plain full-width homepage too, open `index.md` and change `layout: nav-profile` to `layout: base`.
+**Don't want the profile block?** Open `index.md` and delete the `{% raw %}{% include layout/profile-intro.html %}{% endraw %}` line. Nothing else on the page depends on it.
+
+**Prefer a round photo?** Change that line to `{% raw %}{% include layout/profile-intro.html shape="circle" %}{% endraw %}`.
+
+**Want the old left sidebar instead?** Xanthan still ships it. Delete the include line and change the homepage's front matter from `layout: base` to `layout: nav-profile`; it reads the same `_data/nav-profile.yml`. It puts your profile in a permanent left column on whichever pages use that layout, which is worth it if your links belong on every page and not otherwise.
 
 
 ## Step 4: Edit Your Content Pages

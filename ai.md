@@ -23,7 +23,7 @@ This is a Jekyll static site built on the **Xanthan** framework, hosted on GitHu
 | `index.md` | Homepage — text intro + auto-generated card stack |
 | `research.md`, `teaching.md`, `creative.md`, `cv.md` | Content pages |
 | `_data/nav-top.yml` | Top navigation links (YAML list) |
-| `_data/nav-profile.yml` | Sidebar photo, name, bio, social links |
+| `_data/nav-profile.yml` | Profile photo, name, role, bio, social links |
 | `assets/css/base.css` | All CSS variables — edit here to change colors/fonts |
 | `assets/css/themes/` | Optional full theme overrides |
 | `_includes/` | Reusable components (figure, jumbotron, etc.) |
@@ -41,7 +41,7 @@ Every `.md` page opens with a YAML block between `---` lines. Required fields:
 ```yaml
 ---
 title: Page Title
-layout: base          # or nav-profile (adds sidebar)
+layout: base          # or nav-profile (adds the left profile sidebar)
 ---
 ```
 
@@ -69,11 +69,12 @@ thumbnail-zoom: 1.2          # CSS background-size multiplier (optional)
   url: /writing
 ```
 
-`_data/nav-profile.yml` — sidebar (only on pages with `layout: nav-profile`):
+`_data/nav-profile.yml` — the profile block at the top of the homepage, drawn by `{% raw %}{% include layout/profile-intro.html %}{% endraw %}`. The `nav-profile` sidebar layout reads the same file:
 
 ```yaml
 image_url: /assets/images/profile/photo.jpg
 name: Your Name
+role: Associate Professor of History    # optional; the sidebar ignores it
 description: One or two sentence bio.
 links:
   - title: GitHub
@@ -137,8 +138,8 @@ Review the _includes folder and see the references at https://xanthan-web.github
 
 ## Layouts
 
-- `layout: base` — full-width page, top navbar only
-- `layout: nav-profile` — adds a sidebar driven by `_data/nav-profile.yml`; used on the homepage by default
+- `layout: base` — full-width page, top navbar only. Every page in this template uses it, including the homepage.
+- `layout: nav-profile` — adds a left profile sidebar driven by `_data/nav-profile.yml`. Available, but not used here: the homepage shows the same profile as a full-width block instead, via `{% raw %}{% include layout/profile-intro.html %}{% endraw %}`
 
 ---
 
