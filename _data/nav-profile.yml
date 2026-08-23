@@ -1,7 +1,8 @@
 image_url: /assets/images/profile/eduardo-goody-MQ-Rkg64jf4-unsplash.jpg
 alt_text: "Your profile photo"
 name: Your Name
-description: Replace this with a short bio — one or two sentences describing who you are and what you do. This appears under your photo in the sidebar.
+role: Your title, department, or what you do   # optional — delete this line to leave it out
+description: Replace this with a short bio — one or two sentences describing who you are and what you do. This appears beside your photo at the top of the homepage.
 
 links:
   - title: Personal Website
@@ -18,4 +19,4 @@ links:
     icon: fas fa-envelope
 
 settings:
-  links_font_weight: normal   # font weight for sidebar links (normal or bold)
+  links_font_weight: normal   # font weight for the links, if you use the sidebar layout

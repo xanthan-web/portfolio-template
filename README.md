@@ -20,7 +20,7 @@ Full walkthrough: [Getting Started Guide](https://xanthan-web.github.io/xanthan/
 - **Homepage** — Introduction, bio, featured work
 - **CV/Resume** — Academic or professional CV
 - **Project pages** — Sample essays and work examples
-- **Profile sidebar** — Photo, name, and social links
+- **Profile block** — Photo, name, bio, and social links at the top of the homepage
 
 ### Framework Files
 
