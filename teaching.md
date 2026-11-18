@@ -19,8 +19,7 @@ Teaching pages work well for a teaching philosophy statement, a list of courses 
 Write a paragraph or two about how you approach teaching. What do you believe about how students learn? What are you trying to accomplish in the classroom? You don't need a formal teaching statement here — a direct, honest account of your approach is more compelling than polished boilerplate.
 
 {% include images/figure.html
-  class="right"
-  width="45%"
+  image-width="45%"
   caption="Add an image that represents your teaching — a classroom, a field site, a project students built."
   image-path="/assets/images/great-lecture.jpg"
 %}

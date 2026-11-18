@@ -13,3 +13,21 @@ baseurl: "/portfolio-template"  # your repository name, with a leading slash.
 # ----------------------------------------------------------------------------
 analytics_id:   # paste your Google Analytics measurement ID (G-XXXXXXXXXX)
 search: true    # set to false to disable site search
+
+# ----------------------------------------------------------------------------
+# Files kept out of the published site. The first two are guidance for AI
+# assistants; the rest are Jekyll's own defaults, which this list replaces.
+# ----------------------------------------------------------------------------
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

@@ -112,9 +112,9 @@ Most of the sample pages have an image on them somewhere, so the best approach t
 
 ```{%raw%}
 {% include images/figure.html
-  class="right"
-  width="40%"
+  image-width="40%"
   caption="Your caption here"
+  alt-text="What the image shows"
   image-path="/assets/images/your-image.jpg"
 %}{%endraw%}
 ```
