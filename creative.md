@@ -17,13 +17,12 @@ To rename this page, change the `title` field in the front matter above and upda
 ## Your Section Title
 
 {% include images/figure.html
-  class="left"
-  width="45%"
+  image-width="45%"
   caption="Add an image that represents this work. Delete this component if you don't need it."
   image-path="/assets/images/ai-created-kinetic-sculpture.png"
 %}
 
-Write a paragraph or two introducing what this page is about. This is a good page to experiment with Xanthan's image components — `figure` (standalone, left/right/center) and `figure-wrap` (text wraps around the image) both work well for portfolio-style pages with lots of visual content.
+Write a paragraph or two introducing what this page is about. This is a good page to experiment with Xanthan's image components — `figure` (a centered image) and `figure-wrap` (an image beside text) both work well for portfolio-style pages with lots of visual content.
 
 Replace this text with your own. And if this page doesn't fit your portfolio at all, you can delete this file and remove its entry from `_data/nav-top.yml`.
 
